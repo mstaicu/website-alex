@@ -19,7 +19,8 @@ deploy:
   local-dir: dist
   on:
     branch: master
-after_deploy:
-  - travis-ci-cloudfront-invalidation -a $AWS_ACCESS_KEY_ID -s
-    $AWS_SECRET_ACCESS_KEY -c $CLOUDFRONT_ID -i '/*' -b $TRAVIS_BRANCH -p
-    $TRAVIS_PULL_REQUEST
+# Uncomment this when getting to distributions
+# after_deploy:
+#   - travis-ci-cloudfront-invalidation -a $AWS_ACCESS_KEY_ID -s
+#     $AWS_SECRET_ACCESS_KEY -c $CLOUDFRONT_ID -i '/*' -b $TRAVIS_BRANCH -p
+#     $TRAVIS_PULL_REQUEST
