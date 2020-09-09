@@ -1,2 +1,3 @@
-export * from './layout';
-export * from './ui';
+export * from './Header';
+export * from './Loader';
+export * from './Nav';

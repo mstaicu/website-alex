@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 // eslint-disable-next-line
 import i18n from '@config/i18n';
 
-import { App, GlobalStyles } from '@src/components';
+import { App, GlobalStyles } from '@src/layout';
 
 ReactDOM.render(
   <React.StrictMode>

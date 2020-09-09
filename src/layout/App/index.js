@@ -5,7 +5,7 @@ import styled from '@emotion/styled';
 
 import { Routes } from '../Routes';
 
-import { Header, Loader } from '@src/components/ui';
+import { Header, Loader } from '@src/components';
 
 export const App = () => (
   <BrowserRouter>

@@ -20,6 +20,7 @@ export const GlobalStyles = () => (
   <Global
     styles={css`
       ${emotionNormalize}
+
       @font-face {
         font-family: 'Open Sans';
         font-style: normal;
