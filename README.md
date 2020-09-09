@@ -10,7 +10,7 @@
 <!-- - [Usage](#usage)
     - [Development](#development)
     - [Production](#production) -->
-- [Continuous deployment](#continuous\ deployment)
+- [Continuous deployment](#continuous-deployment)
 
 ## Introduction
 
