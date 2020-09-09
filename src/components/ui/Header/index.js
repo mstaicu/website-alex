@@ -2,7 +2,7 @@ import React from 'react';
 
 import styled from '@emotion/styled';
 
-import { Nav } from '../../ui';
+import { Nav } from '../Nav';
 
 export const Header = () => (
   <Wrapper>
