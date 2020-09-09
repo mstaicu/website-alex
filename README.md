@@ -57,7 +57,7 @@ This will download a copy of the repository in your current folder (where you 'c
 
 ## Dependencies
 
-You must install the application dependencies in order to run this application on your local machine. The installation of the dependencies is done using the following command, issued from the terminal emulator at the root of the project
+You must install the application dependencies in order to run this application on your local machine. The installation of the dependencies is done using the following command, issued from the terminal emulator at the root of the project (`npm` is a program that comes with [nodejs](https://nodejs.org/) and is available as a global variable in your terminal emulator after the installation of nodejs)
 
 ```bash
 $ npm install
