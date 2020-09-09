@@ -6,11 +6,11 @@
 - [Introduction](#introduction)
 - [Prerequisities](#prerequisites)
 - Installation
-  - [Clone repository](#clone)
-  - [Install dependencies](#dependencies)
-<!-- - [Usage](#usage)
-    - [Development](#development)
-    - [Production](#production) -->
+  - [Getting the sources](#getting-the-sources)
+  - [Installing the dependencies](#installing-the-dependencies)
+- Usage
+    - [Development environment](#development-environment)
+    - [Production deployment](#production-deployment)
 - [Continuous deployment](#continuous-deployment)
 
 ## Introduction
@@ -30,11 +30,11 @@ The following tools need to be installed before you can develop or deploy agains
 * [nodejs](https://nodejs.org/)
 * [git](https://git-scm.com/download/win)
 
-## Clone
+## Getting the sources
 
-In order to start contributing to this project or even run it locally, you must first retrieve a copy of the project from Github. In order to do this, we will open the installed terminal emulator and navigate to a folder where we will download the sources
+In order to start contributing to this project or even run it locally, you must first retrieve a copy of the project from Github. In order to do this, open a terminal emulator and navigate to a folder where you will download the sources of the project
 
-First, change the volume (partition)
+First, change the partition
 
 ```bash
 $ d:
@@ -46,9 +46,9 @@ Navigation in the terminal is done with the 'change directory' or 'cd' command
 $ cd D:\Projects
 ```
 
-Note that you must specify the absolute path, on the volume (partition), to an existing directory
+Note that you must specify the absolute path, on the partition, to an existing directory
 
-After we have navigated to the desired folder, we can clone the project repository
+After we have navigated to the desired folder, clone the project
 
 ```bash
 $ git clone https://github.com/mstaicu/website-alex.git
@@ -56,13 +56,17 @@ $ git clone https://github.com/mstaicu/website-alex.git
 
 This will download a copy of the repository in your current folder (where you 'changed directory')
 
-## Dependencies
+## Installing the dependencies
 
 You must install the application dependencies in order to run this application on your local machine. The installation of the dependencies is done using the following command, issued from the terminal emulator at the root of the project (`npm` is a program that comes with [nodejs](https://nodejs.org/) and is available as a global variable in your terminal emulator after the installation of nodejs)
 
 ```bash
 $ npm install
 ```
+
+## Development environment
+
+## Production deployment
 
 ## Continuous deployment
 
