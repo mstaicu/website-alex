@@ -1,5 +1,6 @@
 🎨🖌
 =
+[![Build Status](https://travis-ci.org/mstaicu/website-alex.svg?branch=master)](https://travis-ci.org/mstaicu/website-alex)
 
 ## Table of content
 - [Introduction](#introduction)
@@ -76,5 +77,3 @@ We are using Travis CI for continous delivery and deployment to production. The 
   * builds the project
   * deploys the project to AWS S3
   * invalidates the Cloudfront distribution
-
-The projects' status page can be found [here](https://travis-ci.org/github/mstaicu/website-alex)
