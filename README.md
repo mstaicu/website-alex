@@ -67,14 +67,14 @@ $ npm install
 
 We are using Travis CI for continous delivery and deployment to production. The deployment pipeline:
 
-* A pull request is opened on Github, containing new contributions to the source code of the project. For every opened pull request, a new build is started on Travis CI, which will:
-  * validate the project
-  * build the project
-* A maintainer of the project must approve the pull request based on the build status from Travis CI
-* Once the pull request is merged in the master branch of the repository, Travis CI will start another build, but this time it will:
-  * validate the project
-  * build the project
-  * deploy the project to AWS S3
-  * invalidate the Cloudfront distribution
+* Contributions to this project should be done through Github pull requests. For every opened pull request, a new job is started on Travis CI, which:
+  * validates the project
+  * builds the project
+* A maintainer of the project must approve the pull request, based on the build status from Travis CI
+* Once the pull request is merged in the master branch of the repository, Travis CI will start another job, which:
+  * validates the project
+  * builds the project
+  * deploys the project to AWS S3
+  * invalidates the Cloudfront distribution
 
 The projects' status page can be found [here](https://travis-ci.org/github/mstaicu/website-alex)
