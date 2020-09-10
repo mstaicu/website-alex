@@ -11,7 +11,6 @@
 - Usage
     - [Development environment](#development-environment)
     - [Production deployment](#production-deployment)
-- [Continuous deployment](#continuous-deployment)
 
 ## Introduction
 
@@ -40,7 +39,7 @@ First, change the partition
 $ d:
 ```
 
-Navigation in the terminal is done with the 'change directory' or 'cd' command
+Navigation in the terminal is done with the `change directory` or `cd` command
 
 ```bash
 $ cd D:\Projects
@@ -54,7 +53,11 @@ After we have navigated to the desired folder, clone the project
 $ git clone https://github.com/mstaicu/website-alex.git
 ```
 
-This will download a copy of the repository in your current folder (where you 'changed directory')
+This will download a copy of the project in your current folder (where you `changed directory`) under the `website-alex` folder. After this operation has completed, you need to `change directory` into the project folder
+
+```bash
+$ cd website-alex
+```
 
 ## Installing the dependencies
 
@@ -66,11 +69,17 @@ $ npm install
 
 ## Development environment
 
+👉🏻 All the following commands must be issued at the root folder of the project. For example, if the project folder has been cloned in `D:\Experiments\website-alex`, you must navigate inside this folder from your terminal using the `cd` shell command
+
+In order to run the project locally, you must issue the following command in your terminal
+
+```bash
+$ npm run dev
+```
+
 ## Production deployment
 
-## Continuous deployment
-
-We are using Travis CI for continous delivery and deployment to production. The deployment pipeline:
+We are using Travis CI for continous delivery and deployment to production. The deployment pipeline follows the convention:
 
 * Contributions to this project should be done through Github pull requests. For every opened pull request, a new job is started on Travis CI, which:
   * validates the project
