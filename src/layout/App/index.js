@@ -22,9 +22,7 @@ export const App = () => (
         </Suspense>
       </Main>
 
-      <Footer>
-        <h2>WAAT</h2>
-      </Footer>
+      <Footer></Footer>
     </Wrapper>
   </BrowserRouter>
 );

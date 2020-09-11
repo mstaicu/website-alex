@@ -1,8 +1,13 @@
 {
-  "text": "Hello",
-  "button": {
-    "home": "Go home",
-    "dummy1": "Go to Dummy1",
-    "dummy2": "Go to Dummy2"
+  "header": {
+    "nav": {
+      "design": "Design",
+      "illustration": "Illustration",
+      "animation": "Animation",
+      "others": "Other projects",
+      "all": "All work",
+      "profile": "Profile",
+      "digitalFootprint": "Digital Footprint"
+    }
   }
 }

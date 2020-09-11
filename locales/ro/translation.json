@@ -1,8 +1,13 @@
 {
-  "text": "Buna",
-  "button": {
-    "home": "Mergi acasa",
-    "dummy1": "Mergi la Dummy1",
-    "dummy2": "Mergi la Dummy2"
+  "header": {
+    "nav": {
+      "design": "Design",
+      "illustration": "Ilustrații",
+      "animation": "Animații",
+      "others": "Alte proiecte",
+      "all": "Întreg portofoliu",
+      "profile": "Profil",
+      "digitalFootprint": "Amprentă digitală"
+    }
   }
 }
