@@ -69,11 +69,15 @@ const Wrapper = styled('div')`
    */
   grid-template-columns: repeat(3, 1fr);
 
+  margin-bottom: 16px;
+
   @media only screen and (min-width: 650px) {
     /**
      * On larger devices, i.e. > 650px with, we create 4 equal columns
      */
     grid-template-columns: repeat(4, 1fr);
+
+    margin: 0;
   }
 `;
 

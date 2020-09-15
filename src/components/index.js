@@ -3,3 +3,5 @@ export * from './HeaderNav';
 export * from './HeaderPlaceholder';
 export * from './HeaderSocialIcons';
 export * from './Loader';
+export * from './ProjectCard';
+export * from './ProjectCards';

@@ -38,6 +38,8 @@ const Wrapper = styled('div')`
     'header-center'
     'header-right';
 
+  margin-bottom: 16px;
+
   /**
    * Principles:
    * 
@@ -71,11 +73,15 @@ const Left = styled('div')`
   display: flex;
   justify-content: center;
 
+  margin-bottom: 16px;
+
   @media only screen and (min-width: 650px) {
     /**
      * On larger devices, i.e. > 650px with, adjacent position the grey placeholder
      */
     display: block;
+
+    margin: 0;
   }
 
   height: 100%;

@@ -1,5 +1,7 @@
 import React from 'react';
 
-const Home = () => <div>Home page</div>;
+import { ProjectCards } from '@src/components';
+
+const Home = () => <ProjectCards />;
 
 export default Home;
