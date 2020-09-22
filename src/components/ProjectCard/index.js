@@ -3,29 +3,45 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 export const ProjectCard = () => (
-  <Exterior>
-    <Interior>
-      <Top>
-        <ProjectCategory>Graphic Design</ProjectCategory>
-      </Top>
-
-      <Bottom>
-        <ProjectName>Nume Proiect</ProjectName>
-        <ProjectDate>Data: Iulie 2020</ProjectDate>
-      </Bottom>
-    </Interior>
-  </Exterior>
+  <CardWrapper>
+    <Card>
+      <CardBorder>
+        <CardContent>
+          <CardContentTop>
+            <ProjectCategory>Graphic Design</ProjectCategory>
+          </CardContentTop>
+          <CardContentBottom>
+            <ProjectName>Nume Proiect</ProjectName>
+            <ProjectDate>Nume Proiect</ProjectDate>
+          </CardContentBottom>
+        </CardContent>
+      </CardBorder>
+    </Card>
+  </CardWrapper>
 );
 
-const Exterior = styled('div')`
-  flex-basis: 100%;
+const CardWrapper = styled('div')`
+  width: 100%;
 
-  padding: 8px;
-  border: 8px solid white;
+  /**
+   * In order to define an element that maintains an aspect ratio across viewports
+   * we set its height to 0 as the height will be calculated by using bottom padding
+   */
+  height: 0;
 
-  margin-bottom: 8px;
+  /**
+   * By using a percentage value with the padding property, we get the parent's percentage
+   * and multiply it by the height ratio and then divide it by the width ratio
+   * in order to obtain an element that has an aspect ratio of 23:30
+   */
+  padding-bottom: calc(100% * 30 / 23);
 
-  background-color: grey;
+  border: 1px solid black;
+
+  /**
+   * This establishes a parent-child relationship with any absolutely positioned descendants
+   */
+  position: relative;
 
   /**
    * Principles:
@@ -34,38 +50,52 @@ const Exterior = styled('div')`
    * 2. Do not worry too much on specific breakpoint values as they are less relevant 
    *    compared to the design of the page
    */
-  @media only screen and (min-width: 321px) {
-    flex-basis: 50%;
-  }
-
-  @media only screen and (min-width: 667px) {
-    flex-basis: 25%;
-  }
-
-  @media only screen and (min-width: 769px) {
-    flex-basis: 20%;
-  }
-
-  @media only screen and (min-width: 1200) {
-    flex-basis: 180px;
+  @media only screen and (min-width: 400px) {
+    width: 230px;
+    padding-bottom: calc(230px * 30 / 23);
   }
 `;
 
-const Interior = styled('article')`
+/**
+ * This is the element that will hold our content
+ * This element is needed because the parent element has no height,
+ * but the bottom padding determines the height of the element,
+ * thus we need an element positioned inside the parent that will hold the content
+ */
+const Card = styled('div')`
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+`;
+
+const CardBorder = styled('div')`
+  width: 100%;
+  height: 100%;
+
+  padding: 8px;
+
+  background-color: grey;
+`;
+
+const CardContent = styled('article')`
   display: flex;
 
   flex-direction: column;
   justify-content: space-between;
 
-  min-height: 200px;
+  width: 100%;
+  height: 100%;
 
   padding: 8px;
 
   background-color: #fff;
 `;
 
-const Top = styled('div')``;
-const Bottom = styled('div')``;
+const CardContentTop = styled('div')``;
+const CardContentBottom = styled('div')``;
 
 const ProjectCategory = styled('p')`
   margin: 0;
