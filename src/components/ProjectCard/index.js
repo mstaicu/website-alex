@@ -36,7 +36,7 @@ const CardWrapper = styled('div')`
    */
   padding-bottom: calc(100% * 30 / 23);
 
-  border: 1px solid black;
+  margin-bottom: 4px;
 
   /**
    * This establishes a parent-child relationship with any absolutely positioned descendants
@@ -51,8 +51,10 @@ const CardWrapper = styled('div')`
    *    compared to the design of the page
    */
   @media only screen and (min-width: 400px) {
-    width: 230px;
-    padding-bottom: calc(230px * 30 / 23);
+    width: 177px;
+    padding-bottom: calc(177px * 30 / 23);
+
+    margin-right: 4px;
   }
 `;
 
