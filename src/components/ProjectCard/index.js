@@ -2,8 +2,10 @@ import React from 'react';
 
 import styled from '@emotion/styled';
 
+const cardAspectRatio = 30 / 23;
+
 export const ProjectCard = () => (
-  <CardWrapper>
+  <CardWrapper aspectRatio={cardAspectRatio}>
     <Card>
       <CardBorder>
         <CardContent>
@@ -34,7 +36,7 @@ const CardWrapper = styled('div')`
    * and multiply it by the height ratio and then divide it by the width ratio
    * in order to obtain an element that has an aspect ratio of 23:30
    */
-  padding-bottom: calc(100% * 30 / 23);
+  padding-bottom: calc(100% * ${props => props.aspectRatio});
 
   margin-bottom: 4px;
 
@@ -50,11 +52,41 @@ const CardWrapper = styled('div')`
    * 2. Do not worry too much on specific breakpoint values as they are less relevant 
    *    compared to the design of the page
    */
-  @media only screen and (min-width: 400px) {
-    width: 177px;
-    padding-bottom: calc(177px * 30 / 23);
+  @media (min-width: 320px) {
+    width: calc((100% / 2) - 4px);
+    padding-bottom: calc(
+      calc((100% / 2) - 4px) * ${props => props.aspectRatio}
+    );
 
     margin-right: 4px;
+  }
+
+  @media (min-width: 640px) {
+    width: calc((100% / 4) - 4px);
+    padding-bottom: calc(
+      calc((100% / 4) - 4px) * ${props => props.aspectRatio}
+    );
+  }
+
+  @media (min-width: 768px) {
+    width: calc((100% / 5) - 4px);
+    padding-bottom: calc(
+      calc((100% / 5) - 4px) * ${props => props.aspectRatio}
+    );
+  }
+
+  @media (min-width: 1024px) {
+    width: calc((100% / 7) - 4px);
+    padding-bottom: calc(
+      calc((100% / 7) - 4px) * ${props => props.aspectRatio}
+    );
+  }
+
+  @media (min-width: 1280px) {
+    width: calc((100% / 9) - 4px);
+    padding-bottom: calc(
+      calc((100% / 9) - 4px) * ${props => props.aspectRatio}
+    );
   }
 `;
 
