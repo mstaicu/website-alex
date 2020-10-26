@@ -2,15 +2,11 @@ import React from 'react';
 
 import styled from '@emotion/styled';
 
-export const HeaderPlaceholder = () => (
-  <div>
-    <Placeholder />
-  </div>
-);
+export const HeaderPlaceholder = () => <Placeholder />;
 
 const Placeholder = styled('div')`
-  width: 50px;
-  height: 50px;
+  width: 49px;
+  height: 49px;
 
   background-color: grey;
 `;

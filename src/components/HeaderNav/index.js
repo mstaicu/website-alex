@@ -98,14 +98,17 @@ const List = styled('div')`
 `;
 
 const Button = styled('button')`
-  padding: 0.5rem;
+  height: calc(4rem + 1px);
 
   border: none;
-
   background: transparent;
 
-  font-size: 2rem;
+  font-size: 14px;
   text-align: left;
+
+  @media only screen and (min-width: 650px) {
+    height: 3rem;
+  }
 
   // todo: define styles for the active state
   &.active {

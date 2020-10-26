@@ -21,8 +21,11 @@ export const ProjectCard = ({ name, subCategory }) => (
 );
 
 const Card = styled('div')`
-  width: 164px;
-  margin: 0 0.5rem 0.5rem 0;
+  // this random value makes 23/30 aspect ratio cards fall on the 8px base grid
+  width: 153px;
+
+  margin-right: 7px;
+  margin-bottom: 1rem;
 `;
 
 const Frame = styled('div')`

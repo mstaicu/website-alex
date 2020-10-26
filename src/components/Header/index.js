@@ -38,7 +38,7 @@ const Wrapper = styled('div')`
     'header-center'
     'header-right';
 
-  margin-bottom: 16px;
+  margin-bottom: calc(2rem + 1px);
 
   /**
    * Principles:
@@ -72,8 +72,9 @@ const Left = styled('div')`
    */
   display: flex;
   justify-content: center;
+  align-items: center;
 
-  margin-bottom: 16px;
+  margin-bottom: 2rem;
 
   @media only screen and (min-width: 650px) {
     /**
@@ -81,7 +82,7 @@ const Left = styled('div')`
      */
     display: block;
 
-    margin: 0;
+    margin-bottom: 0;
   }
 
   height: 100%;
