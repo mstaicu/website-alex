@@ -48,6 +48,7 @@ export const GlobalStyles = () => (
       }
       html {
         box-sizing: border-box;
+        font-size: 8px;
       }
       *,
       *:before,

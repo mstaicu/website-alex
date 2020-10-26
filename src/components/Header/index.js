@@ -101,4 +101,6 @@ const Right = styled('div')`
   align-items: center;
 
   height: 100%;
+
+  font-size: 2rem;
 `;

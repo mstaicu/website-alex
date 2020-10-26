@@ -1,57 +1,63 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 
 import { useTranslation } from 'react-i18next';
 
 import styled from '@emotion/styled';
 
+import { useProjects } from '../ProjectsContext';
+
 export const HeaderNav = () => {
   const { t } = useTranslation();
+
+  // eslint-disable-next-line
+  const [projects, filter] = useProjects();
 
   return (
     <Wrapper>
       <List>
-        <ListItem>
-          <StyledLink activeClassName="active" to="/dummy1">
-            {t('header.nav.design')}
-          </StyledLink>
-        </ListItem>
-        <ListItem>
-          <StyledLink activeClassName="active" to="/dummy2">
-            {t('header.nav.illustration')}
-          </StyledLink>
-        </ListItem>
-        <ListItem>
-          <StyledLink activeClassName="active" to="/dummy2">
-            {t('header.nav.animation')}
-          </StyledLink>
-        </ListItem>
+        <Button
+          onClick={() => filter(project => project.subCategory === 'design')}
+        >
+          {t('header.nav.design')}
+        </Button>
+        <Button
+          onClick={() =>
+            filter(project => project.subCategory === 'illustration')
+          }
+        >
+          {t('header.nav.illustration')}
+        </Button>
+        <Button
+          onClick={() => filter(project => project.subCategory === 'animation')}
+        >
+          {t('header.nav.animation')}
+        </Button>
       </List>
 
       <List>
-        <ListItem>
-          <StyledLink activeClassName="active" to="/dummy1">
-            {t('header.nav.others')}
-          </StyledLink>
-        </ListItem>
-        <ListItem>
-          <StyledLink activeClassName="active" to="/dummy1">
-            {t('header.nav.all')}
-          </StyledLink>
-        </ListItem>
+        <Button
+          onClick={() => filter(project => project.subCategory === 'others')}
+        >
+          {t('header.nav.others')}
+        </Button>
+        <Button onClick={() => filter(project => project)}>
+          {t('header.nav.all')}
+        </Button>
       </List>
 
       <List>
-        <ListItem>
-          <StyledLink activeClassName="active" to="/dummy1">
-            {t('header.nav.profile')}
-          </StyledLink>
-        </ListItem>
-        <ListItem>
-          <StyledLink activeClassName="active" to="/dummy1">
-            {t('header.nav.digitalFootprint')}
-          </StyledLink>
-        </ListItem>
+        <Button
+          onClick={() => filter(project => project.subCategory === 'profile')}
+        >
+          {t('header.nav.profile')}
+        </Button>
+        <Button
+          onClick={() =>
+            filter(project => project.subCategory === 'digitalFootprint')
+          }
+        >
+          {t('header.nav.digitalFootprint')}
+        </Button>
       </List>
     </Wrapper>
   );
@@ -69,7 +75,7 @@ const Wrapper = styled('div')`
    */
   grid-template-columns: repeat(3, 1fr);
 
-  margin-bottom: 16px;
+  margin-bottom: 2rem;
 
   @media only screen and (min-width: 650px) {
     /**
@@ -81,7 +87,7 @@ const Wrapper = styled('div')`
   }
 `;
 
-const List = styled('ul')`
+const List = styled('div')`
   display: flex;
   flex-direction: column;
 
@@ -89,25 +95,24 @@ const List = styled('ul')`
 
   padding: 0;
   margin: 0;
-
-  list-style: none;
 `;
 
-const ListItem = styled('li')``;
+const Button = styled('button')`
+  padding: 0.5rem;
 
-const StyledLink = styled(NavLink)`
-  text-decoration: none;
+  border: none;
 
-  &:focus,
-  &:hover,
-  &:visited,
-  &:link,
-  &:active {
-    text-decoration: none;
-  }
+  background: transparent;
+
+  font-size: 2rem;
+  text-align: left;
 
   // todo: define styles for the active state
   &.active {
     color: red;
+  }
+
+  &:hover {
+    cursor: pointer;
   }
 `;
