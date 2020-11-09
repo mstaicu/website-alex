@@ -2,17 +2,17 @@ import React from 'react';
 
 import styled from '@emotion/styled';
 
-export const ProjectCard = ({ name, subCategory }) => (
+export const ProjectCard = ({ project }) => (
   <Card>
     <Frame>
       <FrameContent>
         <CardContent>
           <CardContentTop>
-            <ProjectCategory>{subCategory}</ProjectCategory>
+            <ProjectCategory>{project.subCategory}</ProjectCategory>
           </CardContentTop>
           <CardContentBottom>
-            <ProjectName>{name}</ProjectName>
-            {/* <ProjectDate>{date.toString()}</ProjectDate> */}
+            <ProjectName>{project.name}</ProjectName>
+            <ProjectDate>{project.date.toDateString()}</ProjectDate>
           </CardContentBottom>
         </CardContent>
       </FrameContent>
@@ -61,12 +61,13 @@ const CardContentBottom = styled('div')``;
 
 const ProjectCategory = styled('p')`
   margin: 0;
+  overflow-wrap: break-word;
 `;
 
 const ProjectName = styled('h2')`
   margin: 0 0 1rem 0;
 `;
 
-// const ProjectDate = styled('p')`
-//   margin: 0;
-// `;
+const ProjectDate = styled('p')`
+  margin: 0;
+`;

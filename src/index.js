@@ -4,15 +4,18 @@ import ReactDOM from 'react-dom';
 // eslint-disable-next-line
 import i18n from '@config/i18n';
 
-import { App, GlobalStyles } from '@src/layout';
-import { ProjectsProvider } from '@src/components/ProjectsContext';
+import { App, GlobalStyles } from './layout';
+import { DataProvider, FilterDataProvider } from './context';
 
 ReactDOM.render(
   <React.StrictMode>
     <GlobalStyles />
-    <ProjectsProvider>
-      <App />
-    </ProjectsProvider>
+
+    <DataProvider>
+      <FilterDataProvider>
+        <App />
+      </FilterDataProvider>
+    </DataProvider>
   </React.StrictMode>,
   document.getElementById('root'),
 );

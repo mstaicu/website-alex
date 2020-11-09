@@ -6,19 +6,25 @@ import { HeaderPlaceholder } from '../HeaderPlaceholder';
 import { HeaderSocialIcons } from '../HeaderSocialIcons';
 import { HeaderNav } from '../HeaderNav';
 
-export const Header = () => (
-  <Wrapper>
-    <Left>
-      <HeaderPlaceholder />
-    </Left>
-    <Center>
-      <HeaderNav />
-    </Center>
-    <Right>
-      <HeaderSocialIcons />
-    </Right>
-  </Wrapper>
-);
+import { useFilterDataContext } from '../../context';
+
+export const Header = () => {
+  const { filter } = useFilterDataContext();
+
+  return (
+    <Wrapper>
+      <Left>
+        <HeaderPlaceholder />
+      </Left>
+      <Center>
+        <HeaderNav onItemClick={filter} />
+      </Center>
+      <Right>
+        <HeaderSocialIcons />
+      </Right>
+    </Wrapper>
+  );
+};
 
 const Wrapper = styled('div')`
   display: grid;

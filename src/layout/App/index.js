@@ -4,8 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import styled from '@emotion/styled';
 
 import { Routes } from '../Routes';
-
-import { Header, Loader } from '@src/components';
+import { Header, Loader } from '../../components';
 
 export const App = () => (
   <BrowserRouter>

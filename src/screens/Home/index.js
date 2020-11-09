@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ProjectCards } from '@src/components';
+import { ProjectCards } from '../../components';
 
 const Home = () => <ProjectCards />;
 

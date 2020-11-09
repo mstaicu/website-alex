@@ -4,31 +4,30 @@ import { useTranslation } from 'react-i18next';
 
 import styled from '@emotion/styled';
 
-import { useProjects } from '../ProjectsContext';
-
-export const HeaderNav = () => {
+export const HeaderNav = ({ onItemClick }) => {
   const { t } = useTranslation();
-
-  // eslint-disable-next-line
-  const [projects, filter] = useProjects();
 
   return (
     <Wrapper>
       <List>
         <Button
-          onClick={() => filter(project => project.subCategory === 'design')}
+          onClick={() =>
+            onItemClick(({ project }) => project.category === 'DESIGN')
+          }
         >
           {t('header.nav.design')}
         </Button>
         <Button
           onClick={() =>
-            filter(project => project.subCategory === 'illustration')
+            onItemClick(({ project }) => project.category === 'ILLUSTRATION')
           }
         >
           {t('header.nav.illustration')}
         </Button>
         <Button
-          onClick={() => filter(project => project.subCategory === 'animation')}
+          onClick={() =>
+            onItemClick(({ project }) => project.category === 'ANIMATION')
+          }
         >
           {t('header.nav.animation')}
         </Button>
@@ -36,28 +35,20 @@ export const HeaderNav = () => {
 
       <List>
         <Button
-          onClick={() => filter(project => project.subCategory === 'others')}
+          onClick={() =>
+            onItemClick(({ project }) => project.category === 'OTHER')
+          }
         >
           {t('header.nav.others')}
         </Button>
-        <Button onClick={() => filter(project => project)}>
+        <Button onClick={() => onItemClick(({ project }) => project)}>
           {t('header.nav.all')}
         </Button>
       </List>
 
       <List>
-        <Button
-          onClick={() => filter(project => project.subCategory === 'profile')}
-        >
-          {t('header.nav.profile')}
-        </Button>
-        <Button
-          onClick={() =>
-            filter(project => project.subCategory === 'digitalFootprint')
-          }
-        >
-          {t('header.nav.digitalFootprint')}
-        </Button>
+        <Button>{t('header.nav.profile')}</Button>
+        <Button>{t('header.nav.digitalFootprint')}</Button>
       </List>
     </Wrapper>
   );

@@ -2,16 +2,17 @@ import React from 'react';
 
 import styled from '@emotion/styled';
 
+import { useFilterDataContext } from '../../context';
+
 import { ProjectCard } from '../ProjectCard';
-import { useProjects } from '../ProjectsContext';
 
 export const ProjectCards = () => {
-  const [projects] = useProjects();
+  const { projects } = useFilterDataContext();
 
   return (
     <Wrapper>
-      {projects.map(project => (
-        <ProjectCard key={project.id} {...project} />
+      {projects.map(({ id, project }) => (
+        <ProjectCard key={id} project={project} />
       ))}
     </Wrapper>
   );
