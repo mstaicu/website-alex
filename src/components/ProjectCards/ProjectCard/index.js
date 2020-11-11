@@ -2,41 +2,35 @@ import React from 'react';
 
 import styled from '@emotion/styled';
 
+import { Frame } from '../../Frame';
+
 export const ProjectCard = ({ project }) => (
   <Card>
-    <Frame>
-      <FrameContent>
-        <CardContent>
-          <CardContentTop>
-            <ProjectCategory>{project.subCategory}</ProjectCategory>
-          </CardContentTop>
-          <CardContentBottom>
-            <ProjectName>{project.name}</ProjectName>
-            <ProjectDate>{project.date.toDateString()}</ProjectDate>
-          </CardContentBottom>
-        </CardContent>
-      </FrameContent>
+    <Frame ratio="23:30">
+      <CardContent>
+        <CardContentTop>
+          <ProjectCategory>{project.subCategory}</ProjectCategory>
+        </CardContentTop>
+        <CardContentBottom>
+          <ProjectName>{project.name}</ProjectName>
+          <ProjectDate>{new Date(project.date).toDateString()}</ProjectDate>
+        </CardContentBottom>
+      </CardContent>
     </Frame>
   </Card>
 );
 
 const Card = styled('div')`
-  // this random value makes 23/30 aspect ratio cards fall on the 8px base grid
+  /**
+   * this width value makes 23:30 aspect ratio cards fall on the 8px base grid
+   */
   width: 153px;
 
+  /**
+   * these margins are for spacing cards horizontally and vertically
+   */
   margin-right: 7px;
   margin-bottom: 1rem;
-`;
-
-const Frame = styled('div')`
-  padding-bottom: calc(30 / 23 * 100%);
-  position: relative;
-`;
-
-const FrameContent = styled('div')`
-  position: absolute;
-  width: 100%;
-  height: 100%;
 `;
 
 const CardContent = styled('article')`

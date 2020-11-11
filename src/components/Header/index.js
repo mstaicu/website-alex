@@ -2,9 +2,9 @@ import React from 'react';
 
 import styled from '@emotion/styled';
 
-import { HeaderPlaceholder } from '../HeaderPlaceholder';
-import { HeaderSocialIcons } from '../HeaderSocialIcons';
-import { HeaderNav } from '../HeaderNav';
+import { HeaderPlaceholder } from './HeaderPlaceholder';
+import { HeaderNav } from './HeaderNav';
+import { HeaderSocialIcons } from './HeaderSocialIcons';
 
 import { useFilterDataContext } from '../../context';
 

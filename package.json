@@ -9,7 +9,8 @@
     "format": "npm run prettier -- --write",
     "validate": "npm-run-all --parallel check-format lint",
     "dev": "webpack-dev-server --env.env=dev --config ./config/webpack/webpack.config.js",
-    "build": "rimraf dist && webpack --env.env=prod --config ./config/webpack/webpack.config.js && cp -R locales dist/"
+    "build": "rimraf dist && webpack --env.env=prod --config ./config/webpack/webpack.config.js",
+    "copy:assets": "cp -R locales dist/ && cp -R data dist/"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.4",

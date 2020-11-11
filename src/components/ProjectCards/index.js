@@ -4,7 +4,7 @@ import styled from '@emotion/styled';
 
 import { useFilterDataContext } from '../../context';
 
-import { ProjectCard } from '../ProjectCard';
+import { ProjectCard } from './ProjectCard';
 
 export const ProjectCards = () => {
   const { projects } = useFilterDataContext();

@@ -10,7 +10,6 @@ import { DataProvider, FilterDataProvider } from './context';
 ReactDOM.render(
   <React.StrictMode>
     <GlobalStyles />
-
     <DataProvider>
       <FilterDataProvider>
         <App />

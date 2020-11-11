@@ -6,8 +6,6 @@ import React, {
   useEffect,
 } from 'react';
 
-import Projects from '../../data';
-
 const DataContext = createContext();
 
 const useData = () => {
@@ -24,7 +22,9 @@ const DataProvider = props => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    setData(Projects);
+    fetch('/data/projects.json')
+      .then(response => response.json())
+      .then(setData);
   }, []);
 
   const value = useMemo(() => [data, setData], [data]);
