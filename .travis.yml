@@ -14,10 +14,10 @@ script:
   - npm run copy:assets
 deploy:
   provider: s3
+  edge: true
   access_key_id: $AWS_ACCESS_KEY_ID
   secret_access_key: $AWS_SECRET_ACCESS_KEY
   bucket: $S3_BUCKET
-  skip_cleanup: true
   local_dir: dist
   on:
     branch: master
