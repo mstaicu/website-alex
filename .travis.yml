@@ -11,6 +11,7 @@ before_script:
   - npm run validate
 script:
   - npm run build
+  - npm run copy:assets
 deploy:
   provider: s3
   access_key_id: $AWS_ACCESS_KEY_ID
