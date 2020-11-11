@@ -32,7 +32,14 @@ const useFilterDataContext = () => {
     throw new Error(`useFilterDataContext must be used within a DataProvider`);
   }
 
+  /**
+   * Projects data cache
+   */
   const [data] = dataContext;
+
+  /**
+   * Filtered projects data cache
+   */
   const [projects, setProjects] = filterContext;
 
   useEffect(() => {
