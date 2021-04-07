@@ -14,7 +14,6 @@ const ProjectDetails = ({ match }) => {
         if (response.ok) {
           return response.json();
         }
-
         history.push('/project/not-found');
       })
       .then(setProjectDetails);

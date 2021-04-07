@@ -1,20 +1,20 @@
 import React from 'react';
 import { Global, css } from '@emotion/core';
 
-// todo: review this, what weight does it add to the bundle?
+// TODO: Review this, what weight does it add to the bundle?
 import emotionNormalize from 'emotion-normalize';
 
 /**
- * These 3 types weigh 188 KiB
+ * These 3 fonts account for 188 KiB of the payload
  */
-import OpenSansRegularWoff from '@src/assets/fonts/open-sans-v17-latin-regular.woff';
-import OpenSansRegularWoffTwo from '@src/assets/fonts/open-sans-v17-latin-regular.woff2';
+import OpenSansRegularWoff from '../../assets/fonts/open-sans-v17-latin-regular.woff';
+import OpenSansRegularWoffTwo from '../../assets/fonts/open-sans-v17-latin-regular.woff2';
 
-import OpenSansBoldWoff from '@src/assets/fonts/open-sans-v17-latin-700.woff';
-import OpenSansBoldWoffTwo from '@src/assets/fonts/open-sans-v17-latin-700.woff2';
+import OpenSansBoldWoff from '../../assets/fonts/open-sans-v17-latin-700.woff';
+import OpenSansBoldWoffTwo from '../../assets/fonts/open-sans-v17-latin-700.woff2';
 
-import OpenSansItalicWoff from '@src/assets/fonts/open-sans-v17-latin-700.woff';
-import OpenSansItalicWoffTwo from '@src/assets/fonts/open-sans-v17-latin-700.woff2';
+import OpenSansItalicWoff from '../../assets/fonts/open-sans-v17-latin-700.woff';
+import OpenSansItalicWoffTwo from '../../assets/fonts/open-sans-v17-latin-700.woff2';
 
 export const GlobalStyles = () => (
   <Global
@@ -49,6 +49,9 @@ export const GlobalStyles = () => (
       html {
         box-sizing: border-box;
         font-size: 8px;
+
+        width: 100%;
+        height: 100%;
       }
       *,
       *:before,
@@ -56,7 +59,13 @@ export const GlobalStyles = () => (
         box-sizing: inherit;
       }
       body {
-        margin: 0;
+        width: 100%;
+        height: 100%;
+      }
+      #root {
+        width: 100%;
+        height: 100%;
+
         padding: 24px;
       }
     `}

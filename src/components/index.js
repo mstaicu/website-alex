@@ -1,4 +1,4 @@
 export * from './Frame';
-export * from './Header';
+export * from './HomeHeader';
 export * from './Loader';
-export * from './ProjectCards';
+export * from './ProjectCard';

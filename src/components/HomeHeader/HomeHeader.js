@@ -3,28 +3,22 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 import { HeaderPlaceholder } from './HeaderPlaceholder';
-import { HeaderNav } from './HeaderNav';
+import { HeaderNavigation } from './HeaderNavigation';
 import { HeaderSocialIcons } from './HeaderSocialIcons';
 
-import { useFilterDataContext } from '../../context';
-
-export const Header = () => {
-  const { filter } = useFilterDataContext();
-
-  return (
-    <Wrapper>
-      <Left>
-        <HeaderPlaceholder />
-      </Left>
-      <Center>
-        <HeaderNav onItemClick={filter} />
-      </Center>
-      <Right>
-        <HeaderSocialIcons />
-      </Right>
-    </Wrapper>
-  );
-};
+export const HomeHeader = ({ onCategoryClick }) => (
+  <Wrapper>
+    <Left>
+      <HeaderPlaceholder />
+    </Left>
+    <Center>
+      <HeaderNavigation onCategoryClick={onCategoryClick} />
+    </Center>
+    <Right>
+      <HeaderSocialIcons />
+    </Right>
+  </Wrapper>
+);
 
 const Wrapper = styled('div')`
   display: grid;

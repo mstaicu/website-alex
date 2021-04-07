@@ -8,6 +8,12 @@ const xhrOptions = {
   loadPath: '/locales/{{lng}}/{{ns}}.json',
 };
 
+/**
+ * The content language served by i18n, in the source code, is picked based on:
+ *
+ * 1. First check the 'navigator' object on the global scope (open the developer console and type navigator.language to get the top level language of the browser)
+ * 2. If not, check the 'en' attribute on the <html> tag
+ */
 const languageDetectionOptions = {
   order: ['navigator', 'htmlTag'],
 };

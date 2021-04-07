@@ -4,44 +4,28 @@ import { useTranslation } from 'react-i18next';
 
 import styled from '@emotion/styled';
 
-export const HeaderNav = ({ onItemClick }) => {
+export const HeaderNavigation = ({ onCategoryClick }) => {
   const { t } = useTranslation();
 
   return (
     <Wrapper>
       <List>
-        <Button
-          onClick={() =>
-            onItemClick(({ project }) => project.category === 'DESIGN')
-          }
-        >
+        <Button onClick={() => onCategoryClick('DESIGN')}>
           {t('header.nav.design')}
         </Button>
-        <Button
-          onClick={() =>
-            onItemClick(({ project }) => project.category === 'ILLUSTRATION')
-          }
-        >
+        <Button onClick={() => onCategoryClick('ILLUSTRATION')}>
           {t('header.nav.illustration')}
         </Button>
-        <Button
-          onClick={() =>
-            onItemClick(({ project }) => project.category === 'ANIMATION')
-          }
-        >
+        <Button onClick={() => onCategoryClick('ANIMATION')}>
           {t('header.nav.animation')}
         </Button>
       </List>
 
       <List>
-        <Button
-          onClick={() =>
-            onItemClick(({ project }) => project.category === 'OTHER')
-          }
-        >
+        <Button onClick={() => onCategoryClick('OTHER')}>
           {t('header.nav.others')}
         </Button>
-        <Button onClick={() => onItemClick(({ project }) => project)}>
+        <Button onClick={() => onCategoryClick('')}>
           {t('header.nav.all')}
         </Button>
       </List>
@@ -89,17 +73,13 @@ const List = styled('div')`
 `;
 
 const Button = styled('button')`
-  height: calc(4rem + 1px);
-
+  padding: 4px;
   border: none;
+
   background: transparent;
 
   font-size: 14px;
   text-align: left;
-
-  @media only screen and (min-width: 650px) {
-    height: 3rem;
-  }
 
   // todo: define styles for the active state
   &.active {

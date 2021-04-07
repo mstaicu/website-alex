@@ -1,4 +1,3 @@
-const Dotenv = require('dotenv-webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -10,8 +9,5 @@ module.exports = {
       patterns: [{ from: 'public' }],
     }),
     new HtmlWebpackPlugin({ template: './public/index.html' }),
-    new Dotenv({
-      path: './.env.production',
-    }),
   ],
 };

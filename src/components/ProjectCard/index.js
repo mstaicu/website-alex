@@ -2,7 +2,7 @@ import React from 'react';
 
 import styled from '@emotion/styled';
 
-import { Frame } from '../../Frame';
+import { Frame } from '../Frame';
 
 export const ProjectCard = ({ project }) => (
   <Card>
