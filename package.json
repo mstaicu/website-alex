@@ -8,8 +8,8 @@
     "check-format": "npm run prettier -- --list-different",
     "format": "npm run prettier -- --write",
     "validate": "npm-run-all --parallel check-format lint",
-    "dev": "NODE_ENV=development webpack-dev-server --config ./config/webpack/webpack.config.js",
-    "build": "NODE_ENV=production rimraf dist && webpack --config ./config/webpack/webpack.config.js",
+    "dev": "NODE_ENV=development webpack-dev-server --env.NODE_ENV=development --config ./config/webpack/webpack.config.js",
+    "build": "NODE_ENV=production rimraf dist && webpack --env.NODE_ENV=production --config ./config/webpack/webpack.config.js",
     "copy:assets": "cp -R locales dist/ && cp -R data dist/"
   },
   "devDependencies": {
