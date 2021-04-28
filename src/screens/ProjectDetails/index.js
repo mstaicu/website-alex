@@ -9,7 +9,7 @@ const ProjectDetails = ({ match }) => {
   const [projectDetails, setProjectDetails] = useState();
 
   useEffect(() => {
-    fetch(`/data/projectDetails/${match.params.id}.json`)
+    fetch(`/data/projects/${match.params.id}.json`)
       .then(response => {
         if (response.ok) {
           return response.json();

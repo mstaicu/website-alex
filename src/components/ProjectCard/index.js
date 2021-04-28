@@ -4,21 +4,28 @@ import styled from '@emotion/styled';
 
 import { Frame } from '../Frame';
 
-export const ProjectCard = ({ project }) => (
-  <Card>
-    <Frame ratio="23:30">
-      <CardContent>
-        <CardContentTop>
-          <ProjectCategory>{project.subCategory}</ProjectCategory>
-        </CardContentTop>
-        <CardContentBottom>
-          <ProjectName>{project.name}</ProjectName>
-          <ProjectDate>{new Date(project.date).toDateString()}</ProjectDate>
-        </CardContentBottom>
-      </CardContent>
-    </Frame>
-  </Card>
-);
+export const ProjectCard = ({ project, onClick }) => {
+  const { assets } = project;
+
+  return (
+    <Card onClick={onClick}>
+      <Frame ratio="23:30">
+        <FrameContent>
+          <ProjectCover src={assets.cover} />
+          <ProjectDetails>
+            <ProjectDetailsTop>
+              <ProjectCategory>{project.category}</ProjectCategory>
+            </ProjectDetailsTop>
+            <ProjectDetailsBottom>
+              <ProjectName>{project.name}</ProjectName>
+              <ProjectDate>{new Date(project.date).toDateString()}</ProjectDate>
+            </ProjectDetailsBottom>
+          </ProjectDetails>
+        </FrameContent>
+      </Frame>
+    </Card>
+  );
+};
 
 const Card = styled('div')`
   /**
@@ -33,7 +40,33 @@ const Card = styled('div')`
   margin-bottom: 1rem;
 `;
 
-const CardContent = styled('article')`
+const FrameContent = styled('article')`
+  width: 100%;
+  height: 100%;
+
+  position: relative;
+
+  border: 0.5rem solid grey;
+
+  font-size: 2rem;
+
+  background-color: #fff;
+`;
+
+const ProjectCover = styled('img')`
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  object-fit: cover;
+
+  z-index: 0;
+`;
+
+const ProjectDetails = styled('div')`
   display: flex;
 
   flex-direction: column;
@@ -43,15 +76,25 @@ const CardContent = styled('article')`
   height: 100%;
 
   padding: 1rem;
-  border: 0.5rem solid grey;
 
-  font-size: 2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
 
   background-color: #fff;
+
+  opacity: 0;
+  transition: opacity 500ms ease;
+
+  :hover {
+    opacity: 1;
+  }
+
+  z-index: 10;
 `;
 
-const CardContentTop = styled('div')``;
-const CardContentBottom = styled('div')``;
+const ProjectDetailsTop = styled('div')``;
+const ProjectDetailsBottom = styled('div')``;
 
 const ProjectCategory = styled('p')`
   margin: 0;

@@ -1,0 +1,19 @@
+{
+  "id": 3,
+  "name": "AdServio",
+  "date": "2000-07-01",
+  "category": "ANIMATION",
+  "assets": {
+    "cover": "https://drive.google.com/uc?export=download&id=1moOdbuLGYT95-a5y77sahIcBtoF-rLSm",
+    "header": "https://drive.google.com/uc?export=download&id=1HrH_1YYpGS1mfnw0NE2nVlmd0Iv5IPns",
+    "media": {
+      "gif": [],
+      "jpg": [],
+      "json": [],
+      "video": [
+        "https://drive.google.com/uc?export=download&id=1DUjdQIQL2VFA-btqeK3-dqcQnDTfIAtM",
+        "https://drive.google.com/uc?export=download&id=1ixiA6fjk0p8oS61UX-unpL94Awmca85d"
+      ]
+    }
+  }
+}
