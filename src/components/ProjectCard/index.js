@@ -11,38 +11,22 @@ export const ProjectCard = ({
     date,
     media: { cardUrl },
   },
-  onClick,
 }) => (
-  <Card onClick={onClick}>
-    <Frame ratio="23:30">
-      <FrameContent>
-        <ProjectCover src={cardUrl} />
-        <ProjectDetails>
-          <ProjectDetailsTop>
-            <ProjectCategory>{category}</ProjectCategory>
-          </ProjectDetailsTop>
-          <ProjectDetailsBottom>
-            <ProjectName>{name}</ProjectName>
-            <ProjectDate>{new Date(date).toDateString()}</ProjectDate>
-          </ProjectDetailsBottom>
-        </ProjectDetails>
-      </FrameContent>
-    </Frame>
-  </Card>
+  <Frame ratio="23:30">
+    <FrameContent>
+      <ProjectCover src={cardUrl} />
+      <ProjectDetails>
+        <ProjectDetailsTop>
+          <ProjectCategory>{category}</ProjectCategory>
+        </ProjectDetailsTop>
+        <ProjectDetailsBottom>
+          <ProjectName>{name}</ProjectName>
+          <ProjectDate>{new Date(date).toDateString()}</ProjectDate>
+        </ProjectDetailsBottom>
+      </ProjectDetails>
+    </FrameContent>
+  </Frame>
 );
-
-const Card = styled('div')`
-  /**
-   * this width value makes 23:30 aspect ratio cards fall on the 8px base grid
-   */
-  width: 153px;
-
-  /**
-   * these margins are for spacing cards horizontally and vertically
-   */
-  margin-right: 7px;
-  margin-bottom: 1rem;
-`;
 
 const FrameContent = styled('article')`
   width: 100%;
