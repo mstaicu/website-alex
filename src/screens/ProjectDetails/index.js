@@ -1,29 +1,19 @@
-import React, { useEffect, useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import React from 'react';
 
-import { Loader } from '../../components';
+import { DesignProjectDetails, Loader } from '../../components';
 
-const ProjectDetails = ({ match }) => {
-  const history = useHistory();
+const ProjectDetails = ({ projects, match: { params } }) => {
+  if (!projects || projects.length === 0) {
+    return <Loader />;
+  }
 
-  const [projectDetails, setProjectDetails] = useState();
+  const project = projects.find(project => project.id === Number(params.id));
 
-  useEffect(() => {
-    fetch(`/data/projects/${match.params.id}.json`)
-      .then(response => {
-        if (response.ok) {
-          return response.json();
-        }
-        history.push('/project/not-found');
-      })
-      .then(setProjectDetails);
-  }, []);
+  if (project.category === 'DESIGN') {
+    return <DesignProjectDetails project={project} />;
+  }
 
-  return projectDetails ? (
-    <div>Project name {projectDetails.name}</div>
-  ) : (
-    <Loader />
-  );
+  return <></>;
 };
 
 export default ProjectDetails;

@@ -9,5 +9,16 @@
       "profile": "Profile",
       "digitalFootprint": "Digital Footprint"
     }
+  },
+  "project": {
+    "card": {},
+    "details": {
+      "design": {
+        "title": "Project title",
+        "client": "Client",
+        "date": "Date",
+        "team": "Team"
+      }
+    }
   }
 }

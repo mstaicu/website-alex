@@ -6,7 +6,7 @@ import { HeaderPlaceholder } from './HeaderPlaceholder';
 import { HeaderNavigation } from './HeaderNavigation';
 import { HeaderSocialIcons } from './HeaderSocialIcons';
 
-export const HomeHeader = ({ onCategoryClick }) => (
+export const Header = ({ onCategoryClick }) => (
   <Wrapper>
     <Left>
       <HeaderPlaceholder />

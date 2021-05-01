@@ -4,28 +4,32 @@ import styled from '@emotion/styled';
 
 import { Frame } from '../Frame';
 
-export const ProjectCard = ({ project, onClick }) => {
-  const { assets } = project;
-
-  return (
-    <Card onClick={onClick}>
-      <Frame ratio="23:30">
-        <FrameContent>
-          <ProjectCover src={assets.cover} />
-          <ProjectDetails>
-            <ProjectDetailsTop>
-              <ProjectCategory>{project.category}</ProjectCategory>
-            </ProjectDetailsTop>
-            <ProjectDetailsBottom>
-              <ProjectName>{project.name}</ProjectName>
-              <ProjectDate>{new Date(project.date).toDateString()}</ProjectDate>
-            </ProjectDetailsBottom>
-          </ProjectDetails>
-        </FrameContent>
-      </Frame>
-    </Card>
-  );
-};
+export const ProjectCard = ({
+  project: {
+    name,
+    category,
+    date,
+    media: { cardUrl },
+  },
+  onClick,
+}) => (
+  <Card onClick={onClick}>
+    <Frame ratio="23:30">
+      <FrameContent>
+        <ProjectCover src={cardUrl} />
+        <ProjectDetails>
+          <ProjectDetailsTop>
+            <ProjectCategory>{category}</ProjectCategory>
+          </ProjectDetailsTop>
+          <ProjectDetailsBottom>
+            <ProjectName>{name}</ProjectName>
+            <ProjectDate>{new Date(date).toDateString()}</ProjectDate>
+          </ProjectDetailsBottom>
+        </ProjectDetails>
+      </FrameContent>
+    </Frame>
+  </Card>
+);
 
 const Card = styled('div')`
   /**

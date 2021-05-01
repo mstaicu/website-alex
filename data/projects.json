@@ -1,230 +1,114 @@
 [
   {
     "id": 1,
-    "name": "First graphic design",
+    "name": "AdServio",
     "date": "2000-07-01",
-    "category": "DESIGN",
-    "assets": {
-      "cover": "https://drive.google.com/uc?export=download&id=1moOdbuLGYT95-a5y77sahIcBtoF-rLSm",
-      "header": "https://drive.google.com/uc?export=download&id=1HrH_1YYpGS1mfnw0NE2nVlmd0Iv5IPns",
-      "media": {
-        "gif": [],
-        "jpg": [],
-        "json": [],
-        "video": [
-          "https://drive.google.com/uc?export=download&id=1DUjdQIQL2VFA-btqeK3-dqcQnDTfIAtM",
-          "https://drive.google.com/uc?export=download&id=1ixiA6fjk0p8oS61UX-unpL94Awmca85d"
-        ]
-      }
+    "category": "ANIMATION",
+    "content": {
+      "title": "Lorem ipsum dolor sit amet"
+    },
+    "media": {
+      "cardUrl": "https://drive.google.com/uc?export=download&id=1moOdbuLGYT95-a5y77sahIcBtoF-rLSm",
+      "headerUrl": "https://drive.google.com/uc?export=download&id=1HrH_1YYpGS1mfnw0NE2nVlmd0Iv5IPns",
+      "gifUrls": [],
+      "jpgUrls": [],
+      "jsonUrls": [],
+      "videoUrls": [
+        "https://drive.google.com/uc?export=download&id=1DUjdQIQL2VFA-btqeK3-dqcQnDTfIAtM",
+        "https://drive.google.com/uc?export=download&id=1ixiA6fjk0p8oS61UX-unpL94Awmca85d"
+      ]
     }
   },
   {
     "id": 2,
-    "name": "First illustration",
+    "name": "Amalgam",
     "date": "2000-07-01",
-    "category": "ILLUSTRATION",
-    "assets": {
-      "cover": "https://drive.google.com/uc?export=download&id=1moOdbuLGYT95-a5y77sahIcBtoF-rLSm",
-      "header": "https://drive.google.com/uc?export=download&id=1HrH_1YYpGS1mfnw0NE2nVlmd0Iv5IPns",
-      "media": {
-        "gif": [],
-        "jpg": [],
-        "json": [],
-        "video": [
-          "https://drive.google.com/uc?export=download&id=1DUjdQIQL2VFA-btqeK3-dqcQnDTfIAtM",
-          "https://drive.google.com/uc?export=download&id=1ixiA6fjk0p8oS61UX-unpL94Awmca85d"
-        ]
-      }
+    "category": "ANIMATION",
+    "content": {
+      "title": "Lorem ipsum dolor sit amet"
+    },
+    "media": {
+      "cardUrl": "https://drive.google.com/uc?export=download&id=1Rpf-eocZ7ck2WmpCZlP5UxjyK5H9-W2x",
+      "headerUrl": "https://drive.google.com/uc?export=download&id=1V7ns59G9L14OKUAaPW0z7hUiVNLNJ4dd",
+      "gifUrls": [
+        "https://drive.google.com/uc?export=download&id=1AyNzgdovBtLzHSrlS7Tdt14OhdcfTlBZ",
+        "https://drive.google.com/uc?export=download&id=1xQ0KqdMC-QEA4mXXhpz-A7Psq2RLSDtY",
+        "https://drive.google.com/uc?export=download&id=1OjRjPshW3-bJBJPbcwKnO2giJMJwdt-6",
+        "https://drive.google.com/uc?export=download&id=19_vAbE8o8OLerLBW61AXxs24G1uckgnU"
+      ],
+      "jpgUrls": [],
+      "jsonUrls": [],
+      "videoUrls": [
+        "https://drive.google.com/uc?export=download&id=16ueQrWouhrOEACSloLjpLiUKcIEkHE4h",
+        "https://drive.google.com/uc?export=download&id=1o3fAA7aGWIDfEZY1bKRcOw7EQerkujjj",
+        "https://drive.google.com/uc?export=download&id=1u5a2VdqfnFqa4oeTgZ7mjboP8yrDzFJO"
+      ]
     }
   },
   {
     "id": 3,
-    "name": "AdServio",
+    "name": "Babson",
     "date": "2000-07-01",
-    "category": "ANIMATION",
-    "assets": {
-      "cover": "https://drive.google.com/uc?export=download&id=1moOdbuLGYT95-a5y77sahIcBtoF-rLSm",
-      "header": "https://drive.google.com/uc?export=download&id=1HrH_1YYpGS1mfnw0NE2nVlmd0Iv5IPns",
-      "media": {
-        "gif": [],
-        "jpg": [],
-        "json": [],
-        "video": [
-          "https://drive.google.com/uc?export=download&id=1DUjdQIQL2VFA-btqeK3-dqcQnDTfIAtM",
-          "https://drive.google.com/uc?export=download&id=1ixiA6fjk0p8oS61UX-unpL94Awmca85d"
-        ]
-      }
+    "category": "DESIGN",
+    "content": {
+      "title": "Lorem ipsum dolor sit amet"
+    },
+    "media": {
+      "cardUrl": "https://drive.google.com/uc?export=download&id=1fF3Xg7m7d2s611tC_sW4DyUCzeanat6I",
+      "headerUrl": "https://drive.google.com/uc?export=download&id=1W3dANuhHZb90IpoF98PX-6Kx9ujR98zn",
+      "gifUrls": [
+        "https://drive.google.com/uc?export=download&id=14ELKznzQyxaylGLsrGNqjUMhSIGrj4en"
+      ],
+      "jpgUrls": [
+        "https://drive.google.com/uc?export=download&id=1NQKYnu6F5vG9HDPJd3wIelB8xSmPnITu",
+        "https://drive.google.com/uc?export=download&id=1-8NQSgrXPO_4PvTyCSJuW1R8_44_S5Sw",
+        "https://drive.google.com/uc?export=download&id=1Cg_1-7RP37JjUti0zyjluyHd_v0-xklI"
+      ],
+      "jsonUrls": [],
+      "videoUrls": []
     }
   },
   {
     "id": 4,
-    "name": "First other",
+    "name": "Illustration?",
     "date": "2000-07-01",
-    "category": "OTHER",
-    "assets": {
-      "cover": "https://drive.google.com/uc?export=download&id=1moOdbuLGYT95-a5y77sahIcBtoF-rLSm",
-      "header": "https://drive.google.com/uc?export=download&id=1HrH_1YYpGS1mfnw0NE2nVlmd0Iv5IPns",
-      "media": {
-        "gif": [],
-        "jpg": [],
-        "json": [],
-        "video": [
-          "https://drive.google.com/uc?export=download&id=1DUjdQIQL2VFA-btqeK3-dqcQnDTfIAtM",
-          "https://drive.google.com/uc?export=download&id=1ixiA6fjk0p8oS61UX-unpL94Awmca85d"
-        ]
-      }
+    "category": "ILLUSTRATION",
+    "content": {
+      "title": "Lorem ipsum dolor sit amet"
+    },
+    "media": {
+      "cardUrl": "https://drive.google.com/uc?export=download&id=1fF3Xg7m7d2s611tC_sW4DyUCzeanat6I",
+      "headerUrl": "https://drive.google.com/uc?export=download&id=1W3dANuhHZb90IpoF98PX-6Kx9ujR98zn",
+      "gifUrls": [
+        "https://drive.google.com/uc?export=download&id=14ELKznzQyxaylGLsrGNqjUMhSIGrj4en"
+      ],
+      "jpgUrls": [
+        "https://drive.google.com/uc?export=download&id=1NQKYnu6F5vG9HDPJd3wIelB8xSmPnITu",
+        "https://drive.google.com/uc?export=download&id=1-8NQSgrXPO_4PvTyCSJuW1R8_44_S5Sw",
+        "https://drive.google.com/uc?export=download&id=1Cg_1-7RP37JjUti0zyjluyHd_v0-xklI"
+      ],
+      "jsonUrls": [],
+      "videoUrls": []
     }
   },
   {
     "id": 5,
-    "name": "First web design",
-    "date": "2000-07-01",
-    "category": "DESIGN",
-    "assets": {
-      "cover": "https://drive.google.com/uc?export=download&id=1moOdbuLGYT95-a5y77sahIcBtoF-rLSm",
-      "header": "https://drive.google.com/uc?export=download&id=1HrH_1YYpGS1mfnw0NE2nVlmd0Iv5IPns",
-      "media": {
-        "gif": [],
-        "jpg": [],
-        "json": [],
-        "video": [
-          "https://drive.google.com/uc?export=download&id=1DUjdQIQL2VFA-btqeK3-dqcQnDTfIAtM",
-          "https://drive.google.com/uc?export=download&id=1ixiA6fjk0p8oS61UX-unpL94Awmca85d"
-        ]
-      }
-    }
-  },
-  {
-    "id": 6,
-    "name": "Second illustration",
-    "date": "2000-07-01",
-    "category": "ILLUSTRATION",
-    "assets": {
-      "cover": "https://drive.google.com/uc?export=download&id=1moOdbuLGYT95-a5y77sahIcBtoF-rLSm",
-      "header": "https://drive.google.com/uc?export=download&id=1HrH_1YYpGS1mfnw0NE2nVlmd0Iv5IPns",
-      "media": {
-        "gif": [],
-        "jpg": [],
-        "json": [],
-        "video": [
-          "https://drive.google.com/uc?export=download&id=1DUjdQIQL2VFA-btqeK3-dqcQnDTfIAtM",
-          "https://drive.google.com/uc?export=download&id=1ixiA6fjk0p8oS61UX-unpL94Awmca85d"
-        ]
-      }
-    }
-  },
-  {
-    "id": 7,
-    "name": "First logo animation",
-    "date": "2000-07-01",
-    "category": "ANIMATION",
-    "assets": {
-      "cover": "https://drive.google.com/uc?export=download&id=1moOdbuLGYT95-a5y77sahIcBtoF-rLSm",
-      "header": "https://drive.google.com/uc?export=download&id=1HrH_1YYpGS1mfnw0NE2nVlmd0Iv5IPns",
-      "media": {
-        "gif": [],
-        "jpg": [],
-        "json": [],
-        "video": [
-          "https://drive.google.com/uc?export=download&id=1DUjdQIQL2VFA-btqeK3-dqcQnDTfIAtM",
-          "https://drive.google.com/uc?export=download&id=1ixiA6fjk0p8oS61UX-unpL94Awmca85d"
-        ]
-      }
-    }
-  },
-  {
-    "id": 8,
-    "name": "Second other",
+    "name": "Other project",
     "date": "2000-07-01",
     "category": "OTHER",
-    "assets": {
-      "cover": "https://drive.google.com/uc?export=download&id=1moOdbuLGYT95-a5y77sahIcBtoF-rLSm",
-      "header": "https://drive.google.com/uc?export=download&id=1HrH_1YYpGS1mfnw0NE2nVlmd0Iv5IPns",
-      "media": {
-        "gif": [],
-        "jpg": [],
-        "json": [],
-        "video": [
-          "https://drive.google.com/uc?export=download&id=1DUjdQIQL2VFA-btqeK3-dqcQnDTfIAtM",
-          "https://drive.google.com/uc?export=download&id=1ixiA6fjk0p8oS61UX-unpL94Awmca85d"
-        ]
-      }
-    }
-  },
-  {
-    "id": 9,
-    "name": "First logo design",
-    "date": "2000-07-01",
-    "category": "DESIGN",
-    "assets": {
-      "cover": "https://drive.google.com/uc?export=download&id=1moOdbuLGYT95-a5y77sahIcBtoF-rLSm",
-      "header": "https://drive.google.com/uc?export=download&id=1HrH_1YYpGS1mfnw0NE2nVlmd0Iv5IPns",
-      "media": {
-        "gif": [],
-        "jpg": [],
-        "json": [],
-        "video": [
-          "https://drive.google.com/uc?export=download&id=1DUjdQIQL2VFA-btqeK3-dqcQnDTfIAtM",
-          "https://drive.google.com/uc?export=download&id=1ixiA6fjk0p8oS61UX-unpL94Awmca85d"
-        ]
-      }
-    }
-  },
-  {
-    "id": 10,
-    "name": "Third illustration",
-    "date": "2000-07-01",
-    "category": "ILLUSTRATION",
-    "assets": {
-      "cover": "https://drive.google.com/uc?export=download&id=1moOdbuLGYT95-a5y77sahIcBtoF-rLSm",
-      "header": "https://drive.google.com/uc?export=download&id=1HrH_1YYpGS1mfnw0NE2nVlmd0Iv5IPns",
-      "media": {
-        "gif": [],
-        "jpg": [],
-        "json": [],
-        "video": [
-          "https://drive.google.com/uc?export=download&id=1DUjdQIQL2VFA-btqeK3-dqcQnDTfIAtM",
-          "https://drive.google.com/uc?export=download&id=1ixiA6fjk0p8oS61UX-unpL94Awmca85d"
-        ]
-      }
-    }
-  },
-  {
-    "id": 11,
-    "name": "First web animation",
-    "date": "2000-07-01",
-    "category": "ANIMATION",
-    "assets": {
-      "cover": "https://drive.google.com/uc?export=download&id=1moOdbuLGYT95-a5y77sahIcBtoF-rLSm",
-      "header": "https://drive.google.com/uc?export=download&id=1HrH_1YYpGS1mfnw0NE2nVlmd0Iv5IPns",
-      "media": {
-        "gif": [],
-        "jpg": [],
-        "json": [],
-        "video": [
-          "https://drive.google.com/uc?export=download&id=1DUjdQIQL2VFA-btqeK3-dqcQnDTfIAtM",
-          "https://drive.google.com/uc?export=download&id=1ixiA6fjk0p8oS61UX-unpL94Awmca85d"
-        ]
-      }
-    }
-  },
-  {
-    "id": 12,
-    "name": "Fourth other",
-    "date": "2000-07-01",
-    "category": "OTHER",
-    "assets": {
-      "cover": "https://drive.google.com/uc?export=download&id=1moOdbuLGYT95-a5y77sahIcBtoF-rLSm",
-      "header": "https://drive.google.com/uc?export=download&id=1HrH_1YYpGS1mfnw0NE2nVlmd0Iv5IPns",
-      "media": {
-        "gif": [],
-        "jpg": [],
-        "json": [],
-        "video": [
-          "https://drive.google.com/uc?export=download&id=1DUjdQIQL2VFA-btqeK3-dqcQnDTfIAtM",
-          "https://drive.google.com/uc?export=download&id=1ixiA6fjk0p8oS61UX-unpL94Awmca85d"
-        ]
-      }
+    "content": {
+      "title": "Lorem ipsum dolor sit amet"
+    },
+    "media": {
+      "cardUrl": "https://drive.google.com/uc?export=download&id=1moOdbuLGYT95-a5y77sahIcBtoF-rLSm",
+      "headerUrl": "https://drive.google.com/uc?export=download&id=1HrH_1YYpGS1mfnw0NE2nVlmd0Iv5IPns",
+      "gifUrls": [],
+      "jpgUrls": [],
+      "jsonUrls": [],
+      "videoUrls": [
+        "https://drive.google.com/uc?export=download&id=1DUjdQIQL2VFA-btqeK3-dqcQnDTfIAtM",
+        "https://drive.google.com/uc?export=download&id=1ixiA6fjk0p8oS61UX-unpL94Awmca85d"
+      ]
     }
   }
 ]

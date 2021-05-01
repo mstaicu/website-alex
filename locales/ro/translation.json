@@ -9,5 +9,16 @@
       "profile": "Profil",
       "digitalFootprint": "Amprentă digitală"
     }
+  },
+  "project": {
+    "card": {},
+    "details": {
+      "design": {
+        "title": "Titlul proiectului",
+        "client": "Client",
+        "date": "Data",
+        "team": "Echipa"
+      }
+    }
   }
 }
