@@ -5,23 +5,27 @@ import styled from '@emotion/styled';
 import { ProjectCard } from '../../components';
 
 const Home = ({ projects, onProjectCardClick }) => (
-  <Wrapper>
+  <Page>
     {projects.map(project => (
-      <Card key={project.id} onClick={() => onProjectCardClick(project)}>
+      <CardWrapper key={project.id} onClick={() => onProjectCardClick(project)}>
         <ProjectCard project={project} />
-      </Card>
+      </CardWrapper>
     ))}
-  </Wrapper>
+  </Page>
 );
 
-const Wrapper = styled('div')`
+const Page = styled('div')`
   display: flex;
 
   flex-direction: row;
   flex-wrap: wrap;
 `;
 
-const Card = styled('div')`
+/**
+ * The @ProjectCard component will take up all the width of its parent
+ * this wrapper defines the dimensions of the @ProjectCard
+ */
+const CardWrapper = styled('div')`
   /**
    * this width value makes 23:30 aspect ratio cards fall on the 8px base grid
    */

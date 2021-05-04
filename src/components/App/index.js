@@ -27,7 +27,29 @@ export const App = () => {
     ? projects.filter(project => project.category === selectedCategory)
     : projects;
 
-  const onProjectCardClick = ({ id }) => history.push(`/project/${id}`);
+  const onProjectDetails = ({ id }) => history.push(`/project/${id}`);
+  const onNextProjectDetails = ({ id }) => {
+    let currentIndex = projects.findIndex(project => project.id === id);
+
+    currentIndex = currentIndex + 1;
+
+    if (currentIndex >= projects.length) {
+      currentIndex = 0;
+    }
+
+    onProjectDetails(projects[currentIndex]);
+  };
+  const onPreviousProjectDetails = ({ id }) => {
+    let currentIndex = projects.findIndex(project => project.id === id);
+
+    currentIndex = currentIndex - 1;
+
+    if (currentIndex < 0) {
+      currentIndex = projects.length - 1;
+    }
+
+    onProjectDetails(projects[currentIndex]);
+  };
 
   return (
     <Suspense fallback={<Loader />}>
@@ -41,7 +63,7 @@ export const App = () => {
             <Home
               {...props}
               projects={filteredProjects}
-              onProjectCardClick={onProjectCardClick}
+              onProjectCardClick={onProjectDetails}
             />
           )}
         />
@@ -49,7 +71,19 @@ export const App = () => {
         <Route
           exact
           path="/project/:id"
-          render={props => <ProjectDetails {...props} projects={projects} />}
+          render={({ match: { params } }) => {
+            const project = projects.find(
+              project => project.id === Number(params.id),
+            );
+
+            return (
+              <ProjectDetails
+                project={project}
+                onNextProjectDetails={onNextProjectDetails}
+                onPreviousProjectDetails={onPreviousProjectDetails}
+              />
+            );
+          }}
         />
         {/* <Route path="*" component={NotFound} /> */}
       </Switch>

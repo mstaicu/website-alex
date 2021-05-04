@@ -1,19 +1,51 @@
 import React from 'react';
 
-import { DesignProjectDetails, Loader } from '../../components';
+import styled from '@emotion/styled';
 
-const ProjectDetails = ({ projects, match: { params } }) => {
-  if (!projects || projects.length === 0) {
-    return <Loader />;
+import { ProjectDetails as ProjectDetails } from '../../components';
+
+const ProjectDetailsPage = ({
+  project,
+  onNextProjectDetails,
+  onPreviousProjectDetails,
+}) =>
+  project ? (
+    <Page>
+      <PageControls>
+        <PageControl onClick={() => onNextProjectDetails(project)}>
+          {'👉🏻'}
+        </PageControl>
+        <PageControl onClick={() => onPreviousProjectDetails(project)}>
+          {'👈🏻'}
+        </PageControl>
+        <PageControl>{'🙈'}</PageControl>
+      </PageControls>
+      <ProjectDetails project={project} />
+    </Page>
+  ) : null;
+
+const Page = styled.div`
+  display: flex;
+`;
+
+const PageControls = styled.div`
+  display: flex;
+
+  flex-direction: column;
+
+  margin-right: 3rem;
+
+  user-select: none;
+`;
+
+const PageControl = styled.p`
+  font-size: 2rem;
+
+  margin: 1rem 0;
+
+  :hover {
+    cursor: pointer;
   }
+`;
 
-  const project = projects.find(project => project.id === Number(params.id));
-
-  if (project.category === 'DESIGN') {
-    return <DesignProjectDetails project={project} />;
-  }
-
-  return <></>;
-};
-
-export default ProjectDetails;
+export default ProjectDetailsPage;

@@ -6,9 +6,11 @@ import { Frame } from '../Frame';
 
 export const ProjectCard = ({
   project: {
-    name,
     category,
     date,
+    content: {
+      project: { name },
+    },
     media: { cardUrl },
   },
 }) => (
@@ -21,7 +23,9 @@ export const ProjectCard = ({
         </ProjectDetailsTop>
         <ProjectDetailsBottom>
           <ProjectName>{name}</ProjectName>
-          <ProjectDate>{new Date(date).toDateString()}</ProjectDate>
+          <ProjectDate>
+            {new Date(date).toLocaleDateString(navigator.language)}
+          </ProjectDate>
         </ProjectDetailsBottom>
       </ProjectDetails>
     </FrameContent>
@@ -39,6 +43,10 @@ const FrameContent = styled('article')`
   font-size: 2rem;
 
   background-color: #fff;
+
+  :hover {
+    cursor: pointer;
+  }
 `;
 
 const ProjectCover = styled('img')`

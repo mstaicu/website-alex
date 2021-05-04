@@ -1,11 +1,19 @@
 [
   {
     "id": 1,
-    "name": "AdServio",
     "date": "2000-07-01",
     "category": "ANIMATION",
     "content": {
-      "title": "Lorem ipsum dolor sit amet"
+      "project": {
+        "name": "AdServio",
+        "client": "Steve Jobs",
+        "team": "IDK",
+        "details": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempor ac eros vitae tincidunt. Nunc interdum odio id ullamcorper volutpat.",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempor ac eros vitae tincidunt. Nunc interdum odio id ullamcorper volutpat.",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempor ac eros vitae tincidunt. Nunc interdum odio id ullamcorper volutpat."
+        ]
+      }
     },
     "media": {
       "cardUrl": "https://drive.google.com/uc?export=download&id=1moOdbuLGYT95-a5y77sahIcBtoF-rLSm",
@@ -21,11 +29,19 @@
   },
   {
     "id": 2,
-    "name": "Amalgam",
     "date": "2000-07-01",
     "category": "ANIMATION",
     "content": {
-      "title": "Lorem ipsum dolor sit amet"
+      "project": {
+        "name": "Amalgam",
+        "client": "Steve Jobs",
+        "team": "IDK",
+        "details": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempor ac eros vitae tincidunt. Nunc interdum odio id ullamcorper volutpat.",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempor ac eros vitae tincidunt. Nunc interdum odio id ullamcorper volutpat.",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempor ac eros vitae tincidunt. Nunc interdum odio id ullamcorper volutpat."
+        ]
+      }
     },
     "media": {
       "cardUrl": "https://drive.google.com/uc?export=download&id=1Rpf-eocZ7ck2WmpCZlP5UxjyK5H9-W2x",
@@ -47,11 +63,19 @@
   },
   {
     "id": 3,
-    "name": "Babson",
     "date": "2000-07-01",
     "category": "DESIGN",
     "content": {
-      "title": "Lorem ipsum dolor sit amet"
+      "project": {
+        "name": "Babson",
+        "client": "Steve Jobs",
+        "team": "IDK",
+        "details": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempor ac eros vitae tincidunt. Nunc interdum odio id ullamcorper volutpat.",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempor ac eros vitae tincidunt. Nunc interdum odio id ullamcorper volutpat.",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempor ac eros vitae tincidunt. Nunc interdum odio id ullamcorper volutpat."
+        ]
+      }
     },
     "media": {
       "cardUrl": "https://drive.google.com/uc?export=download&id=1fF3Xg7m7d2s611tC_sW4DyUCzeanat6I",
@@ -70,11 +94,19 @@
   },
   {
     "id": 4,
-    "name": "Illustration?",
     "date": "2000-07-01",
     "category": "ILLUSTRATION",
     "content": {
-      "title": "Lorem ipsum dolor sit amet"
+      "project": {
+        "name": "Illustration project",
+        "client": "Steve Jobs",
+        "team": "IDK",
+        "details": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempor ac eros vitae tincidunt. Nunc interdum odio id ullamcorper volutpat.",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempor ac eros vitae tincidunt. Nunc interdum odio id ullamcorper volutpat.",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempor ac eros vitae tincidunt. Nunc interdum odio id ullamcorper volutpat."
+        ]
+      }
     },
     "media": {
       "cardUrl": "https://drive.google.com/uc?export=download&id=1fF3Xg7m7d2s611tC_sW4DyUCzeanat6I",
@@ -93,11 +125,19 @@
   },
   {
     "id": 5,
-    "name": "Other project",
     "date": "2000-07-01",
     "category": "OTHER",
     "content": {
-      "title": "Lorem ipsum dolor sit amet"
+      "project": {
+        "name": "Other project",
+        "client": "Steve Jobs",
+        "team": "IDK",
+        "details": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempor ac eros vitae tincidunt. Nunc interdum odio id ullamcorper volutpat.",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempor ac eros vitae tincidunt. Nunc interdum odio id ullamcorper volutpat.",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempor ac eros vitae tincidunt. Nunc interdum odio id ullamcorper volutpat."
+        ]
+      }
     },
     "media": {
       "cardUrl": "https://drive.google.com/uc?export=download&id=1moOdbuLGYT95-a5y77sahIcBtoF-rLSm",
