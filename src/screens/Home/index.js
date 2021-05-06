@@ -7,7 +7,17 @@ import { ProjectCard } from '../../components';
 const Home = ({ projects, onProjectCardClick }) => (
   <Page>
     {projects.map(project => (
-      <CardWrapper key={project.id} onClick={() => onProjectCardClick(project)}>
+      <CardWrapper
+        key={project.id}
+        onClick={() => onProjectCardClick(project)}
+        /**
+         * Following attributes turn a 'div' into an accessible element
+         */
+        onKeyDown={({ key }) => key === 'Enter' && onProjectCardClick(project)}
+        role="button"
+        ariaPressed="false"
+        tabIndex="0"
+      >
         <ProjectCard project={project} />
       </CardWrapper>
     ))}

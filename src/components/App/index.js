@@ -5,10 +5,13 @@ import { Loader } from '../Loader';
 import { Header } from '../Header';
 
 import Home from '../../screens/Home';
-// import NotFound from '../../screens/NotFound';
 
 const ProjectDetails = React.lazy(() =>
   import(/* webpackPrefetch: true */ '../../screens/ProjectDetails'),
+);
+
+const NotFound = React.lazy(() =>
+  import(/* webpackPrefetch: true */ '../../screens/NotFound'),
 );
 
 export const App = () => {
@@ -23,11 +26,9 @@ export const App = () => {
       .then(setProjects);
   }, []);
 
-  const filteredProjects = selectedCategory
-    ? projects.filter(project => project.category === selectedCategory)
-    : projects;
-
+  const onHomeNavigation = () => history.push('/');
   const onProjectDetails = ({ id }) => history.push(`/project/${id}`);
+
   const onNextProjectDetails = ({ id }) => {
     let currentIndex = projects.findIndex(project => project.id === id);
 
@@ -51,6 +52,10 @@ export const App = () => {
     onProjectDetails(projects[currentIndex]);
   };
 
+  const filteredProjects = selectedCategory
+    ? projects.filter(project => project.category === selectedCategory)
+    : projects;
+
   return (
     <Suspense fallback={<Loader />}>
       <Header onCategoryClick={setSelectedCategory} />
@@ -67,25 +72,44 @@ export const App = () => {
             />
           )}
         />
-        {/* <Route exact path="/project/not-found" component={NotFound} /> */}
+        <Route exact path="/project/not-found" component={NotFound} />
         <Route
           exact
           path="/project/:id"
           render={({ match: { params } }) => {
+            /**
+             * Projects haven't loaded yet
+             */
+            if (projects && projects.length === 0) {
+              return null;
+            }
+
             const project = projects.find(
               project => project.id === Number(params.id),
             );
 
+            /**
+             * Project not found
+             */
+            if (projects.length > 0 && !project) {
+              /**
+               * TODO: Investigate why I can't return a value and navigate on the same call stack
+               */
+              setTimeout(() => history.push(`/project/not-found`), 0);
+              return null;
+            }
+
             return (
               <ProjectDetails
                 project={project}
+                onHomeNavigation={onHomeNavigation}
                 onNextProjectDetails={onNextProjectDetails}
                 onPreviousProjectDetails={onPreviousProjectDetails}
               />
             );
           }}
         />
-        {/* <Route path="*" component={NotFound} /> */}
+        <Route path="*" component={NotFound} />
       </Switch>
     </Suspense>
   );

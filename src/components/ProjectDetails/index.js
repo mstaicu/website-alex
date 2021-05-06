@@ -11,7 +11,7 @@ export const ProjectDetails = ({
     content: {
       project: { name, client, team, details },
     },
-    media: { headerUrl },
+    media: { headerUrl, videoUrls, jpgUrls },
   },
 }) => {
   const { t } = useTranslation();
@@ -22,7 +22,7 @@ export const ProjectDetails = ({
     <Wrapper>
       <Frame ratio="31:6">
         {/* TODO: Implement a component that shows a loader prefetching the image */}
-        <Header src={headerUrl} />
+        <Image src={headerUrl} />
       </Frame>
 
       <DetailSection>
@@ -34,22 +34,26 @@ export const ProjectDetails = ({
         </DetailSectionLeft>
         <DetailSectionRight>
           {client && (
-            <ProjectClient>
-              {t('project.details.design.client')}: {client}
-            </ProjectClient>
+            <Row>
+              <Label>{t('project.details.design.client')}</Label>
+              <Value>{client}</Value>
+            </Row>
           )}
 
           {date && (
-            <ProjectDate>
-              {t('project.details.design.date')}:{' '}
-              {new Date(date).toLocaleDateString(navigator.language)}
-            </ProjectDate>
+            <Row>
+              <Label>{t('project.details.design.date')}</Label>
+              <Value>
+                {new Date(date).toLocaleDateString(navigator.language)}
+              </Value>
+            </Row>
           )}
 
           {team && (
-            <ProjectTeam>
-              {t('project.details.design.team')}: {team}
-            </ProjectTeam>
+            <Row>
+              <Label>{t('project.details.design.team')}</Label>
+              <Value>{team}</Value>
+            </Row>
           )}
         </DetailSectionRight>
       </DetailSection>
@@ -57,13 +61,26 @@ export const ProjectDetails = ({
       {restOfDetails.map((detail, index) => (
         <ProjectDetail key={index}>{detail}</ProjectDetail>
       ))}
+
+      {videoUrls.map((videoUrl, index) => (
+        <Frame key={`${videoUrl}${index}`} ratio="16:9">
+          <ProjectVideo controls>
+            <source src={videoUrl} type="video/mp4" />
+            <p>Your browser doesn support HTML5 video.</p>
+          </ProjectVideo>
+        </Frame>
+      ))}
+
+      {jpgUrls.map((jpgUrl, index) => (
+        <Image key={`${jpgUrl}${index}`} src={jpgUrl} />
+      ))}
     </Wrapper>
   );
 };
 
 const Wrapper = styled.div``;
 
-const Header = styled('img')`
+const Image = styled('img')`
   width: 100%;
   height: 100%;
 
@@ -119,26 +136,33 @@ const DetailSectionRight = styled.div`
 `;
 
 const ProjectTitle = styled.h1`
-  font-size: 2.5rem;
+  font-size: clamp(1.5rem, 8vw - 2rem, 3rem);
   font-weight: normal;
 `;
 
 const ProjectMainDetail = styled.p`
-  font-size: 2rem;
+  font-size: clamp(2rem, 8vw - 2rem, 2.5rem);
 `;
-
 const ProjectDetail = styled.p`
-  font-size: 2rem;
+  font-size: clamp(2rem, 8vw - 2rem, 2.5rem);
 `;
 
-const ProjectClient = styled.p`
-  font-size: 1.5rem;
+const Row = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+`;
+const Label = styled.p`
+  font-size: clamp(1.5rem, 8vw - 2rem, 2rem);
+  color: rgba(0, 0, 0, 0.5);
+`;
+const Value = styled.p`
+  font-size: clamp(1.5rem, 8vw - 2rem, 2rem);
 `;
 
-const ProjectDate = styled.p`
-  font-size: 1.5rem;
-`;
+const ProjectVideo = styled.video`
+  width: 100%;
+  height: 100%;
 
-const ProjectTeam = styled.p`
-  font-size: 1.5rem;
+  object-fit: cover;
 `;
