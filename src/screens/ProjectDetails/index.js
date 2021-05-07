@@ -1,31 +1,79 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 
 import styled from '@emotion/styled';
 
 import { ProjectDetails as ProjectDetails } from '../../components';
 
-const ProjectDetailsPage = ({
-  project,
-  //
-  onHomeNavigation,
-  onNextProjectDetails,
-  onPreviousProjectDetails,
-}) => (
-  <Page>
-    <PageControls>
-      <PageControl onClick={() => onNextProjectDetails(project)}>
-        {'👉🏻'}
-      </PageControl>
-      <PageControl onClick={() => onPreviousProjectDetails(project)}>
-        {'👈🏻'}
-      </PageControl>
-      <PageControl onClick={() => onHomeNavigation()}>{'🙈'}</PageControl>
-    </PageControls>
-    <PageContent>
-      <ProjectDetails project={project} />
-    </PageContent>
-  </Page>
-);
+const ProjectDetailsPage = ({ match: { params }, projects }) => {
+  const history = useHistory();
+
+  /**
+   * Projects haven't loaded yet
+   */
+  if (projects && projects.length === 0) {
+    return null;
+  }
+
+  const project = projects.find(project => project.id === Number(params.id));
+
+  /**
+   * Project not found
+   */
+  if (projects.length > 0 && !project) {
+    /**
+     * TODO: Investigate why I can't return a value and navigate on the same call stack
+     */
+    setTimeout(() => history.push(`/project/not-found`), 0);
+
+    return null;
+  }
+
+  const onHomeNavigation = () => history.push('/');
+
+  const onProjectDetails = ({ id }) => history.push(`/project/${id}`);
+
+  const onNextProjectDetails = ({ id }) => {
+    let currentIndex = projects.findIndex(project => project.id === id);
+
+    currentIndex = currentIndex + 1;
+
+    if (currentIndex >= projects.length) {
+      currentIndex = 0;
+    }
+
+    onProjectDetails(projects[currentIndex]);
+  };
+
+  const onPreviousProjectDetails = ({ id }) => {
+    let currentIndex = projects.findIndex(project => project.id === id);
+
+    currentIndex = currentIndex - 1;
+
+    if (currentIndex < 0) {
+      currentIndex = projects.length - 1;
+    }
+
+    onProjectDetails(projects[currentIndex]);
+  };
+
+  return (
+    <Page>
+      <PageControls>
+        <PageControl onClick={() => onNextProjectDetails(project)}>
+          {'👉🏻'}
+        </PageControl>
+        <PageControl onClick={() => onPreviousProjectDetails(project)}>
+          {'👈🏻'}
+        </PageControl>
+        <PageControl onClick={() => onHomeNavigation()}>{'🙈'}</PageControl>
+      </PageControls>
+      <PageContent>
+        <ProjectDetails project={project} />
+      </PageContent>
+    </Page>
+  );
+};
 
 const Page = styled.div`
   display: grid;

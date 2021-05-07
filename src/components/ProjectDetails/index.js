@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { Player, Controls } from '@lottiefiles/react-lottie-player';
 
 import styled from '@emotion/styled';
 
@@ -11,7 +12,7 @@ export const ProjectDetails = ({
     content: {
       project: { name, client, team, details },
     },
-    media: { headerUrl, videoUrls, jpgUrls },
+    media: { headerUrl, videoUrls, jpgUrls, jsonUrls },
   },
 }) => {
   const { t } = useTranslation();
@@ -74,6 +75,23 @@ export const ProjectDetails = ({
       {jpgUrls.map((jpgUrl, index) => (
         <Image key={`${jpgUrl}${index}`} src={jpgUrl} />
       ))}
+
+      <LottieAnimations>
+        {jsonUrls.map((jsonUrl, index) => (
+          <LottieAnimation key={`${jsonUrl}${index}`}>
+            <Player
+              loop
+              src={jsonUrl}
+              style={{ height: '300px', width: '300px' }}
+            >
+              <Controls
+                visible={true}
+                buttons={['play', 'repeat', 'frame', 'debug']}
+              />
+            </Player>
+          </LottieAnimation>
+        ))}
+      </LottieAnimations>
     </Wrapper>
   );
 };
@@ -165,4 +183,15 @@ const ProjectVideo = styled.video`
   height: 100%;
 
   object-fit: cover;
+`;
+
+const LottieAnimations = styled.div`
+  display: flex;
+
+  flex-direction: row;
+  flex-wrap: wrap;
+`;
+
+const LottieAnimation = styled.div`
+  flex-basis: 50%;
 `;
