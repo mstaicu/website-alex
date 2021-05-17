@@ -5,7 +5,7 @@ import styled from '@emotion/styled';
 import { ProjectCard } from '../../components';
 
 const Home = ({ projects, onProjectCardClick }) => (
-  <Page>
+  <Wrapper>
     {projects.map(project => (
       <CardWrapper
         key={project.id}
@@ -21,10 +21,10 @@ const Home = ({ projects, onProjectCardClick }) => (
         <ProjectCard project={project} />
       </CardWrapper>
     ))}
-  </Page>
+  </Wrapper>
 );
 
-const Page = styled('div')`
+const Wrapper = styled('div')`
   display: flex;
 
   flex-direction: row;

@@ -6,13 +6,21 @@ import { HeaderPlaceholder } from './HeaderPlaceholder';
 import { HeaderNavigation } from './HeaderNavigation';
 import { HeaderSocialIcons } from './HeaderSocialIcons';
 
-export const Header = ({ onCategoryClick }) => (
+export const Header = ({
+  onCategoryClick,
+  onDigitalFootprintClick,
+  onProfileClick,
+}) => (
   <Wrapper>
     <Left>
       <HeaderPlaceholder />
     </Left>
     <Center>
-      <HeaderNavigation onCategoryClick={onCategoryClick} />
+      <HeaderNavigation
+        onCategoryClick={onCategoryClick}
+        onDigitalFootprintClick={onDigitalFootprintClick}
+        onProfileClick={onProfileClick}
+      />
     </Center>
     <Right>
       <HeaderSocialIcons />

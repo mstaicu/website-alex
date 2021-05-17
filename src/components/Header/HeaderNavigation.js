@@ -4,7 +4,11 @@ import { useTranslation } from 'react-i18next';
 
 import styled from '@emotion/styled';
 
-export const HeaderNavigation = ({ onCategoryClick }) => {
+export const HeaderNavigation = ({
+  onCategoryClick,
+  onDigitalFootprintClick,
+  onProfileClick,
+}) => {
   const { t } = useTranslation();
 
   return (
@@ -31,8 +35,12 @@ export const HeaderNavigation = ({ onCategoryClick }) => {
       </List>
 
       <List>
-        <Button>{t('header.nav.profile')}</Button>
-        <Button>{t('header.nav.digitalFootprint')}</Button>
+        <Button onClick={() => onProfileClick()}>
+          {t('header.nav.profile')}
+        </Button>
+        <Button onClick={() => onDigitalFootprintClick()}>
+          {t('header.nav.digitalFootprint')}
+        </Button>
       </List>
     </Wrapper>
   );

@@ -49,8 +49,8 @@ const ProjectDetailsPage = ({ match: { params }, projects }) => {
   } = projects[getPreviousProjectIndex(projectIndex)];
 
   return (
-    <Page>
-      <PageControls>
+    <Wrapper>
+      <Left>
         <PageControl
           onClick={() => onNextProjectDetails(projectIndex)}
           data-tooltip={nextProjectName}
@@ -64,19 +64,16 @@ const ProjectDetailsPage = ({ match: { params }, projects }) => {
           {'👈🏻'}
         </PageControl>
         <PageControl onClick={() => onHomeNavigation()}>{'🙈'}</PageControl>
-      </PageControls>
-      <PageContent>
+      </Left>
+      <Right>
         <ProjectDetails project={projects[projectIndex]} />
-      </PageContent>
-    </Page>
+      </Right>
+    </Wrapper>
   );
 };
 
-const Page = styled.div`
+const Wrapper = styled.div`
   display: grid;
-
-  max-width: 1280px;
-  margin: 0 auto;
 
   grid-template-columns: auto;
 
@@ -96,7 +93,7 @@ const Page = styled.div`
   }
 `;
 
-const PageControls = styled.div`
+const Left = styled.div`
   grid-area: page-controls;
 
   display: flex;
@@ -121,6 +118,7 @@ const PageControls = styled.div`
     width: auto;
 
     position: absolute;
+    left: 56px;
 
     opacity: 0;
   }
@@ -130,7 +128,7 @@ const PageControls = styled.div`
   }
 `;
 
-const PageContent = styled.div`
+const Right = styled.div`
   grid-area: page-content;
 `;
 
