@@ -16,15 +16,17 @@
       }
     },
     "media": {
-      "cardUrl": "https://drive.google.com/uc?export=download&id=1moOdbuLGYT95-a5y77sahIcBtoF-rLSm",
-      "headerUrl": "https://drive.google.com/uc?export=download&id=1HrH_1YYpGS1mfnw0NE2nVlmd0Iv5IPns",
-      "gifUrls": [],
-      "jpgUrls": [],
-      "jsonUrls": [],
-      "videoUrls": [
-        "https://drive.google.com/uc?export=download&id=1DUjdQIQL2VFA-btqeK3-dqcQnDTfIAtM",
-        "https://drive.google.com/uc?export=download&id=1ixiA6fjk0p8oS61UX-unpL94Awmca85d"
-      ]
+      "url": {
+        "card": "/data/projects/adservio/card.jpg",
+        "header": "/data/projects/adservio/header.jpg",
+        "gif": [],
+        "jpg": [],
+        "json": [],
+        "video": [
+          "https://drive.google.com/uc?export=download&id=1DUjdQIQL2VFA-btqeK3-dqcQnDTfIAtM",
+          "https://drive.google.com/uc?export=download&id=1ixiA6fjk0p8oS61UX-unpL94Awmca85d"
+        ]
+      }
     }
   },
   {
@@ -44,21 +46,23 @@
       }
     },
     "media": {
-      "cardUrl": "https://drive.google.com/uc?export=download&id=1Rpf-eocZ7ck2WmpCZlP5UxjyK5H9-W2x",
-      "headerUrl": "https://drive.google.com/uc?export=download&id=1V7ns59G9L14OKUAaPW0z7hUiVNLNJ4dd",
-      "gifUrls": [
-        "https://drive.google.com/uc?export=download&id=1AyNzgdovBtLzHSrlS7Tdt14OhdcfTlBZ",
-        "https://drive.google.com/uc?export=download&id=1xQ0KqdMC-QEA4mXXhpz-A7Psq2RLSDtY",
-        "https://drive.google.com/uc?export=download&id=1OjRjPshW3-bJBJPbcwKnO2giJMJwdt-6",
-        "https://drive.google.com/uc?export=download&id=19_vAbE8o8OLerLBW61AXxs24G1uckgnU"
-      ],
-      "jpgUrls": [],
-      "jsonUrls": [],
-      "videoUrls": [
-        "https://drive.google.com/uc?export=download&id=16ueQrWouhrOEACSloLjpLiUKcIEkHE4h",
-        "https://drive.google.com/uc?export=download&id=1o3fAA7aGWIDfEZY1bKRcOw7EQerkujjj",
-        "https://drive.google.com/uc?export=download&id=1u5a2VdqfnFqa4oeTgZ7mjboP8yrDzFJO"
-      ]
+      "url": {
+        "card": "/data/projects/amalgam/card.jpg",
+        "header": "/data/projects/amalgam/header.jpg",
+        "gif": [
+          "/data/projects/amalgam/gif/1.gif",
+          "/data/projects/amalgam/gif/2.gif",
+          "/data/projects/amalgam/gif/3.gif",
+          "/data/projects/amalgam/gif/4.gif"
+        ],
+        "jpg": [],
+        "json": [],
+        "video": [
+          "https://drive.google.com/uc?export=download&id=16ueQrWouhrOEACSloLjpLiUKcIEkHE4h",
+          "https://drive.google.com/uc?export=download&id=1o3fAA7aGWIDfEZY1bKRcOw7EQerkujjj",
+          "https://drive.google.com/uc?export=download&id=1u5a2VdqfnFqa4oeTgZ7mjboP8yrDzFJO"
+        ]
+      }
     }
   },
   {
@@ -78,18 +82,18 @@
       }
     },
     "media": {
-      "cardUrl": "https://drive.google.com/uc?export=download&id=1fF3Xg7m7d2s611tC_sW4DyUCzeanat6I",
-      "headerUrl": "https://drive.google.com/uc?export=download&id=1W3dANuhHZb90IpoF98PX-6Kx9ujR98zn",
-      "gifUrls": [
-        "https://drive.google.com/uc?export=download&id=14ELKznzQyxaylGLsrGNqjUMhSIGrj4en"
-      ],
-      "jpgUrls": [
-        "https://drive.google.com/uc?export=download&id=1NQKYnu6F5vG9HDPJd3wIelB8xSmPnITu",
-        "https://drive.google.com/uc?export=download&id=1-8NQSgrXPO_4PvTyCSJuW1R8_44_S5Sw",
-        "https://drive.google.com/uc?export=download&id=1Cg_1-7RP37JjUti0zyjluyHd_v0-xklI"
-      ],
-      "jsonUrls": [],
-      "videoUrls": []
+      "url": {
+        "card": "/data/projects/babson/card.jpg",
+        "header": "/data/projects/babson/header.jpg",
+        "gif": ["/data/projects/babson/gif/1.gif"],
+        "jpg": [
+          "/data/projects/babson/jpg/0.jpg",
+          "/data/projects/babson/jpg/1.jpg",
+          "/data/projects/babson/jpg/2.jpg"
+        ],
+        "json": [],
+        "video": []
+      }
     }
   },
   {
@@ -109,27 +113,29 @@
       }
     },
     "media": {
-      "cardUrl": "https://drive.google.com/uc?export=download&id=1PatLpqga5hcZUfWcQb85bm_Q5l-574Mo",
-      "headerUrl": "https://drive.google.com/uc?export=download&id=10OuJMDabeYOHfveFX6Ein50cypsYbevC",
-      "gifUrls": [],
-      "jpgUrls": [],
-      "jsonUrls": [
-        "/data/projects/purina/lottie/1/data.json",
-        "/data/projects/purina/lottie/2/data.json",
-        "/data/projects/purina/lottie/3/data.json",
-        "/data/projects/purina/lottie/4/data.json",
-        "/data/projects/purina/lottie/5/data.json",
-        "/data/projects/purina/lottie/6/data.json",
-        "/data/projects/purina/lottie/7/data.json",
-        "/data/projects/purina/lottie/8/data.json",
-        "/data/projects/purina/lottie/9/data.json",
-        "/data/projects/purina/lottie/10/data.json",
-        "/data/projects/purina/lottie/11/data.json",
-        "/data/projects/purina/lottie/12/data.json"
-      ],
-      "videoUrls": [
-        "https://drive.google.com/uc?export=download&id=1FMvkQpUgKzr3rphicAPPcW3xPJILHLm7"
-      ]
+      "url": {
+        "card": "/data/projects/purina/card.jpg",
+        "header": "/data/projects/purina/header.jpg",
+        "gif": [],
+        "jpg": [],
+        "json": [
+          "/data/projects/purina/lottie/1.json",
+          "/data/projects/purina/lottie/2.json",
+          "/data/projects/purina/lottie/3.json",
+          "/data/projects/purina/lottie/4.json",
+          "/data/projects/purina/lottie/5.json",
+          "/data/projects/purina/lottie/6.json",
+          "/data/projects/purina/lottie/7.json",
+          "/data/projects/purina/lottie/8.json",
+          "/data/projects/purina/lottie/9.json",
+          "/data/projects/purina/lottie/10.json",
+          "/data/projects/purina/lottie/11.json",
+          "/data/projects/purina/lottie/12.json"
+        ],
+        "video": [
+          "https://drive.google.com/uc?export=download&id=1FMvkQpUgKzr3rphicAPPcW3xPJILHLm7"
+        ]
+      }
     }
   }
 ]

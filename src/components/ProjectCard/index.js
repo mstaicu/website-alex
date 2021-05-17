@@ -11,12 +11,14 @@ export const ProjectCard = ({
     content: {
       project: { name },
     },
-    media: { cardUrl },
+    media: {
+      url: { card },
+    },
   },
 }) => (
   <Frame ratio="23:30">
     <FrameContent>
-      <ProjectCover src={cardUrl} />
+      <ProjectCover src={card} />
       <ProjectDetails>
         <ProjectDetailsTop>
           <ProjectCategory>{category}</ProjectCategory>

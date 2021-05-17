@@ -3,73 +3,70 @@ import { useHistory } from 'react-router-dom';
 
 import styled from '@emotion/styled';
 
-import { ProjectDetails as ProjectDetails } from '../../components';
+import { ProjectDetails } from '../../components';
 
 const ProjectDetailsPage = ({ match: { params }, projects }) => {
   const history = useHistory();
 
   /**
-   * Projects haven't loaded yet
+   * Projects still loading
    */
   if (projects && projects.length === 0) {
     return null;
   }
 
-  const project = projects.find(project => project.id === Number(params.id));
+  const projectIndex = projects.findIndex(
+    project => project.id === Number(params.id),
+  );
 
-  /**
-   * Project not found
-   */
-  if (projects.length > 0 && !project) {
-    /**
-     * TODO: Investigate why I can't return a value and navigate on the same call stack
-     */
+  if (projects.length > 0 && projectIndex < 0) {
     setTimeout(() => history.push(`/project/not-found`), 0);
-
     return null;
   }
 
   const onHomeNavigation = () => history.push('/');
-
   const onProjectDetails = ({ id }) => history.push(`/project/${id}`);
 
-  const onNextProjectDetails = ({ id }) => {
-    let currentIndex = projects.findIndex(project => project.id === id);
+  const onNextProjectDetails = projectIndex =>
+    onProjectDetails(projects[getNextProjectIndex(projectIndex)]);
+  const onPreviousProjectDetails = projectIndex =>
+    onProjectDetails(projects[getPreviousProjectIndex(projectIndex)]);
 
-    currentIndex = currentIndex + 1;
+  const getNextProjectIndex = index =>
+    index + 1 >= projects.length ? 0 : index + 1;
+  const getPreviousProjectIndex = index =>
+    index - 1 < 0 ? projects.length - 1 : index - 1;
 
-    if (currentIndex >= projects.length) {
-      currentIndex = 0;
-    }
-
-    onProjectDetails(projects[currentIndex]);
-  };
-
-  const onPreviousProjectDetails = ({ id }) => {
-    let currentIndex = projects.findIndex(project => project.id === id);
-
-    currentIndex = currentIndex - 1;
-
-    if (currentIndex < 0) {
-      currentIndex = projects.length - 1;
-    }
-
-    onProjectDetails(projects[currentIndex]);
-  };
+  const {
+    content: {
+      project: { name: nextProjectName },
+    },
+  } = projects[getNextProjectIndex(projectIndex)];
+  const {
+    content: {
+      project: { name: previousProjectName },
+    },
+  } = projects[getPreviousProjectIndex(projectIndex)];
 
   return (
     <Page>
       <PageControls>
-        <PageControl onClick={() => onNextProjectDetails(project)}>
+        <PageControl
+          onClick={() => onNextProjectDetails(projectIndex)}
+          data-tooltip={nextProjectName}
+        >
           {'👉🏻'}
         </PageControl>
-        <PageControl onClick={() => onPreviousProjectDetails(project)}>
+        <PageControl
+          onClick={() => onPreviousProjectDetails(projectIndex)}
+          data-tooltip={previousProjectName}
+        >
           {'👈🏻'}
         </PageControl>
         <PageControl onClick={() => onHomeNavigation()}>{'🙈'}</PageControl>
       </PageControls>
       <PageContent>
-        <ProjectDetails project={project} />
+        <ProjectDetails project={projects[projectIndex]} />
       </PageContent>
     </Page>
   );
@@ -77,6 +74,9 @@ const ProjectDetailsPage = ({ match: { params }, projects }) => {
 
 const Page = styled.div`
   display: grid;
+
+  max-width: 1280px;
+  margin: 0 auto;
 
   grid-template-columns: auto;
 
@@ -112,6 +112,22 @@ const PageControls = styled.div`
   }
 
   user-select: none;
+
+  z-index: 1;
+
+  [data-tooltip]:before {
+    content: attr(data-tooltip);
+
+    width: auto;
+
+    position: absolute;
+
+    opacity: 0;
+  }
+
+  [data-tooltip]:hover:before {
+    opacity: 1;
+  }
 `;
 
 const PageContent = styled.div`

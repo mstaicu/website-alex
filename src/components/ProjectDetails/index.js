@@ -12,28 +12,32 @@ export const ProjectDetails = ({
     content: {
       project: { name, client, team, details },
     },
-    media: { headerUrl, videoUrls, jpgUrls, jsonUrls },
+    media: {
+      url: { header, jpg, json, video },
+    },
   },
 }) => {
   const { t } = useTranslation();
 
-  const [firstProjectDetail, ...restOfDetails] = details;
+  const [firstParagraph, ...remainingParagraphs] = details;
 
   return (
     <Wrapper>
       <Frame ratio="31:6">
         {/* TODO: Implement a component that shows a loader prefetching the image */}
-        <Image src={headerUrl} />
+        <Image src={header} />
       </Frame>
 
-      <DetailSection>
-        <DetailSectionLeft>
-          <ProjectTitle>
+      <Spacer />
+
+      <Details>
+        <LeftSection>
+          <Title>
             {t('project.details.design.title')}: {name}
-          </ProjectTitle>
-          <ProjectMainDetail>{firstProjectDetail}</ProjectMainDetail>
-        </DetailSectionLeft>
-        <DetailSectionRight>
+          </Title>
+          <MainParagraph>{firstParagraph}</MainParagraph>
+        </LeftSection>
+        <RightSection>
           {client && (
             <Row>
               <Label>{t('project.details.design.client')}</Label>
@@ -56,14 +60,18 @@ export const ProjectDetails = ({
               <Value>{team}</Value>
             </Row>
           )}
-        </DetailSectionRight>
-      </DetailSection>
+        </RightSection>
+      </Details>
 
-      {restOfDetails.map((detail, index) => (
-        <ProjectDetail key={index}>{detail}</ProjectDetail>
+      {remainingParagraphs.map((detail, index) => (
+        <Paragraph key={index}>{detail}</Paragraph>
       ))}
 
-      {videoUrls.map((videoUrl, index) => (
+      {remainingParagraphs && remainingParagraphs.length > 0 ? (
+        <Spacer />
+      ) : null}
+
+      {video.map((videoUrl, index) => (
         <Frame key={`${videoUrl}${index}`} ratio="16:9">
           <ProjectVideo controls>
             <source src={videoUrl} type="video/mp4" />
@@ -72,26 +80,34 @@ export const ProjectDetails = ({
         </Frame>
       ))}
 
-      {jpgUrls.map((jpgUrl, index) => (
+      {video && video.length > 0 ? <Spacer /> : null}
+
+      {jpg.map((jpgUrl, index) => (
         <Image key={`${jpgUrl}${index}`} src={jpgUrl} />
       ))}
 
-      <LottieAnimations>
-        {jsonUrls.map((jsonUrl, index) => (
-          <LottieAnimation key={`${jsonUrl}${index}`}>
+      {jpg && jpg.length > 0 ? <Spacer /> : null}
+
+      <Animations>
+        {json.map((jsonUrl, index) => (
+          /**
+           * For more options
+           * https://www.npmjs.com/package/@lottiefiles/react-lottie-player
+           */
+          <Animation key={`${jsonUrl}${index}`}>
             <Player
               loop
               src={jsonUrl}
-              style={{ height: '300px', width: '300px' }}
+              style={{ height: '100%', width: '100%' }}
             >
               <Controls
                 visible={true}
                 buttons={['play', 'repeat', 'frame', 'debug']}
               />
             </Player>
-          </LottieAnimation>
+          </Animation>
         ))}
-      </LottieAnimations>
+      </Animations>
     </Wrapper>
   );
 };
@@ -105,7 +121,7 @@ const Image = styled('img')`
   object-fit: cover;
 `;
 
-const DetailSection = styled.div`
+const Details = styled.div`
   display: grid;
 
   grid-template-rows: auto;
@@ -123,7 +139,7 @@ const DetailSection = styled.div`
   }
 `;
 
-const DetailSectionLeft = styled.div`
+const LeftSection = styled.div`
   /**
    * On small devices, i.e. < 650px width
    */
@@ -137,7 +153,7 @@ const DetailSectionLeft = styled.div`
   }
 `;
 
-const DetailSectionRight = styled.div`
+const RightSection = styled.div`
   /**
    * On small devices, i.e. < 650px width
    */
@@ -153,15 +169,15 @@ const DetailSectionRight = styled.div`
   }
 `;
 
-const ProjectTitle = styled.h1`
+const Title = styled.h1`
   font-size: clamp(1.5rem, 8vw - 2rem, 3rem);
   font-weight: normal;
 `;
 
-const ProjectMainDetail = styled.p`
+const MainParagraph = styled.p`
   font-size: clamp(2rem, 8vw - 2rem, 2.5rem);
 `;
-const ProjectDetail = styled.p`
+const Paragraph = styled.p`
   font-size: clamp(2rem, 8vw - 2rem, 2.5rem);
 `;
 
@@ -185,13 +201,17 @@ const ProjectVideo = styled.video`
   object-fit: cover;
 `;
 
-const LottieAnimations = styled.div`
+const Animations = styled.div`
   display: flex;
 
   flex-direction: row;
   flex-wrap: wrap;
 `;
 
-const LottieAnimation = styled.div`
+const Animation = styled.div`
   flex-basis: 50%;
+`;
+
+const Spacer = styled.div`
+  height: 24px;
 `;
