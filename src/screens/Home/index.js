@@ -15,7 +15,6 @@ const Home = ({ projects, onProjectCardClick }) => (
          */
         onKeyDown={({ key }) => key === 'Enter' && onProjectCardClick(project)}
         role="button"
-        ariaPressed="false"
         tabIndex="0"
       >
         <ProjectCard project={project} />
