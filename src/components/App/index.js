@@ -1,8 +1,10 @@
-import React, { Suspense, useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Route, Switch, useHistory } from 'react-router-dom';
+import useFetch from 'fetch-suspense';
+
 import styled from '@emotion/styled';
 
-import { Loader, Header, Footer } from '../';
+import { Header, Footer } from '../';
 
 import Home from '../../screens/Home';
 
@@ -28,14 +30,9 @@ const Profile = React.lazy(() =>
 export const App = () => {
   const history = useHistory();
 
-  const [projects, setProjects] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState();
+  const projects = useFetch('/data/projects.json');
 
-  useEffect(() => {
-    fetch('/data/projects.json')
-      .then(response => response.json())
-      .then(setProjects);
-  }, []);
+  const [selectedCategory, setSelectedCategory] = useState();
 
   const onProjectDetails = ({ id }) => history.push(`/project/${id}`);
   const onDigitalFootprintClick = () => history.push('/digital-footprint');
@@ -46,50 +43,48 @@ export const App = () => {
     : projects;
 
   return (
-    <Suspense fallback={<Loader />}>
-      <Layout>
-        <Top>
-          <Header
-            onCategoryClick={setSelectedCategory}
-            onDigitalFootprintClick={onDigitalFootprintClick}
-            onProfileClick={onProfileClick}
-          />
-          <Main>
-            <Switch>
-              <Route
-                exact
-                path="/"
-                render={props => (
-                  <Home
-                    {...props}
-                    projects={filteredProjects}
-                    onProjectCardClick={onProjectDetails}
-                  />
-                )}
-              />
-              <Route exact path="/project/not-found" component={NotFound} />
-              <Route
-                exact
-                path="/project/:id"
-                render={props => (
-                  <ProjectDetails {...props} projects={projects} />
-                )}
-              />
-              <Route
-                exact
-                path="/digital-footprint"
-                component={DigitalFootprint}
-              />
-              <Route exact path="/profile" component={Profile} />
-              <Route path="*" component={NotFound} />
-            </Switch>
-          </Main>
-        </Top>
-        <Bottom>
-          <Footer />
-        </Bottom>
-      </Layout>
-    </Suspense>
+    <Layout>
+      <Top>
+        <Header
+          onCategoryClick={setSelectedCategory}
+          onDigitalFootprintClick={onDigitalFootprintClick}
+          onProfileClick={onProfileClick}
+        />
+        <Main>
+          <Switch>
+            <Route
+              exact
+              path="/"
+              render={props => (
+                <Home
+                  {...props}
+                  projects={filteredProjects}
+                  onProjectCardClick={onProjectDetails}
+                />
+              )}
+            />
+            <Route exact path="/project/not-found" component={NotFound} />
+            <Route
+              exact
+              path="/project/:id"
+              render={props => (
+                <ProjectDetails {...props} projects={projects} />
+              )}
+            />
+            <Route
+              exact
+              path="/digital-footprint"
+              component={DigitalFootprint}
+            />
+            <Route exact path="/profile" component={Profile} />
+            <Route path="*" component={NotFound} />
+          </Switch>
+        </Main>
+      </Top>
+      <Bottom>
+        <Footer />
+      </Bottom>
+    </Layout>
   );
 };
 

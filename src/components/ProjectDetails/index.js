@@ -1,8 +1,8 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Player, Controls } from '@lottiefiles/react-lottie-player';
 
 import styled from '@emotion/styled';
+import { Player, Controls } from '@lottiefiles/react-lottie-player';
 
 import { Frame } from '../Frame';
 
@@ -114,7 +114,7 @@ export const ProjectDetails = ({
 
 const Wrapper = styled.div``;
 
-const Image = styled('img')`
+const Image = styled.img`
   width: 100%;
   height: 100%;
 

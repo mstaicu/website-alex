@@ -46,7 +46,7 @@ export const HeaderNavigation = ({
   );
 };
 
-const Wrapper = styled('div')`
+const Wrapper = styled.div`
   display: grid;
 
   height: 100%;
@@ -70,7 +70,7 @@ const Wrapper = styled('div')`
   }
 `;
 
-const List = styled('div')`
+const List = styled.div`
   display: flex;
   flex-direction: column;
 
@@ -80,7 +80,7 @@ const List = styled('div')`
   margin: 0;
 `;
 
-const Button = styled('button')`
+const Button = styled.button`
   padding: 4px;
   border: none;
 

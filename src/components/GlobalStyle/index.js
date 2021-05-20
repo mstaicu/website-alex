@@ -44,27 +44,24 @@ export const GlobalStyles = () => (
       }
       html,
       body {
+        height: 100%;
         font-family: 'Open Sans', sans-serif;
       }
       html {
         box-sizing: border-box;
-        font-size: 8px;
 
-        width: 100%;
-        height: 100%;
+        /**
+         * 1rem is equal to 8px
+         * 2rem is equal to 16px
+         */
+        font-size: 8px;
       }
       *,
       *:before,
       *:after {
         box-sizing: inherit;
       }
-      body {
-        width: 100%;
-        height: 100%;
-      }
       #root {
-        width: 100%;
-
         min-height: 100%;
 
         padding: 3rem;

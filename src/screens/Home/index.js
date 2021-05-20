@@ -24,7 +24,7 @@ const Home = ({ projects, onProjectCardClick }) => (
   </Wrapper>
 );
 
-const Wrapper = styled('div')`
+const Wrapper = styled.div`
   display: flex;
 
   flex-direction: row;
@@ -35,7 +35,7 @@ const Wrapper = styled('div')`
  * The @ProjectCard component will take up all the width of its parent
  * this wrapper defines the dimensions of the @ProjectCard
  */
-const CardWrapper = styled('div')`
+const CardWrapper = styled.div`
   /**
    * this width value makes 23:30 aspect ratio cards fall on the 8px base grid
    */

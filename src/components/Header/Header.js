@@ -28,7 +28,7 @@ export const Header = ({
   </Wrapper>
 );
 
-const Wrapper = styled('div')`
+const Wrapper = styled.div`
   display: grid;
 
   grid-template-rows: auto;
@@ -72,7 +72,7 @@ const Wrapper = styled('div')`
   }
 `;
 
-const Left = styled('div')`
+const Left = styled.div`
   grid-area: header-left;
 
   /**
@@ -96,13 +96,13 @@ const Left = styled('div')`
   height: 100%;
 `;
 
-const Center = styled('div')`
+const Center = styled.div`
   grid-area: header-center;
 
   height: 100%;
 `;
 
-const Right = styled('div')`
+const Right = styled.div`
   grid-area: header-right;
 
   display: flex;

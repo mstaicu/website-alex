@@ -34,7 +34,7 @@ export const ProjectCard = ({
   </Frame>
 );
 
-const FrameContent = styled('article')`
+const FrameContent = styled.article`
   width: 100%;
   height: 100%;
 
@@ -51,7 +51,7 @@ const FrameContent = styled('article')`
   }
 `;
 
-const ProjectCover = styled('img')`
+const ProjectCover = styled.img`
   width: 100%;
   height: 100%;
 
@@ -64,7 +64,7 @@ const ProjectCover = styled('img')`
   z-index: 0;
 `;
 
-const ProjectDetails = styled('div')`
+const ProjectDetails = styled.div`
   display: flex;
 
   flex-direction: column;
@@ -91,18 +91,18 @@ const ProjectDetails = styled('div')`
   z-index: 10;
 `;
 
-const ProjectDetailsTop = styled('div')``;
-const ProjectDetailsBottom = styled('div')``;
+const ProjectDetailsTop = styled.div``;
+const ProjectDetailsBottom = styled.div``;
 
-const ProjectCategory = styled('p')`
+const ProjectCategory = styled.p`
   margin: 0;
   overflow-wrap: break-word;
 `;
 
-const ProjectName = styled('h2')`
+const ProjectName = styled.h2`
   margin: 0 0 1rem 0;
 `;
 
-const ProjectDate = styled('p')`
+const ProjectDate = styled.p`
   margin: 0;
 `;

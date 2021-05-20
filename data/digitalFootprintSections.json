@@ -1,0 +1,24 @@
+[
+  {
+    "title": "Lorem ipsum dolor",
+    "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit. amet, consectetur adipiscing elit",
+    "anchor": {
+      "children": "Some random link",
+      "href": "https://google.com"
+    },
+    "img": {
+      "src": "/data/projects/adservio/header.jpg"
+    }
+  },
+  {
+    "title": "Lorem ipsum dolor",
+    "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit. amet, consectetur adipiscing elit",
+    "anchor": {
+      "children": "Some random link",
+      "href": "https://google.com"
+    },
+    "img": {
+      "src": "/data/projects/adservio/header.jpg"
+    }
+  }
+]

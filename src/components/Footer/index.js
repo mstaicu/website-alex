@@ -10,7 +10,7 @@ export const Footer = () => (
   </Wrapper>
 );
 
-const Wrapper = styled('div')`
+const Wrapper = styled.div`
   width: 100%;
 
   display: flex;
@@ -18,5 +18,5 @@ const Wrapper = styled('div')`
   justify-content: space-between;
 `;
 
-const Left = styled('div')``;
-const Right = styled('div')``;
+const Left = styled.div``;
+const Right = styled.div``;
